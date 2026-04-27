@@ -3,11 +3,6 @@
 -- Entity : ap_user_top
 -- Author : Waj
 -------------------------------------------------------------------------------
--- Description:
--- Integrated top-level module for the ZYBO Playstation 1.
--- Includes FIR-Bank, Tone Generator, Audio RAM (1.3s), Rotary Encoder 
--- and 7-Segment display driver.
--------------------------------------------------------------------------------
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
@@ -24,32 +19,27 @@ entity ap_user_top is
     dac_data_po : out t_dac_smpl;
     dac_enb_pi  : in  std_logic;
     -- Zybo interfaces
-    sw_pi       : in  std_logic_vector(3 downto 0);
-    btn_pi      : in  std_logic_vector(3 downto 0);
-    led_po      : out std_logic_vector(3 downto 0);
-    -- Rotary encoder interface
-    rot_a_pi    : in  std_logic;
-    rot_b_pi    : in  std_logic;
-    -- 7-Segment display interface
+    sw_pi       : in  std_logic_vector(2 downto 0);  -- Changed to 3 bits
+    led_po      : out std_logic_vector(2 downto 0);  -- Changed to 3 bits
+    -- Rotary encoder interface (optional - add if needed)
+    rot_a_pi    : in  std_logic := '0';
+    rot_b_pi    : in  std_logic := '0';
+    -- 7-Segment display interface (optional - add if needed)
     seg_po      : out std_logic_vector(6 downto 0);
     an_po       : out std_logic_vector(1 downto 0)
   );
 end entity ap_user_top;
 
 architecture rtl of ap_user_top is
-
-  -- FIR filter configuration
   constant FIR_COEF     : t_fir_coef := C_FIR_HP9;         
   constant N_TAPS       : natural := 9;                    
   constant FIR_OUT_DW   : natural := f_fir_out_dw(N_TAPS); 
   constant RND_OFF_BITS : natural := FIR_COEF_DW-5;        
   
-  -- IIR Osci configuration (f = 1234 Hz)
-  constant IIR_MA1     : signed(FIR_COEF_DW   downto 0) :=  to_signed(64683, 17); --W=17, F=15 -A1
-  constant IIR_S1_INIT : signed(FIR_COEF_DW-1 downto 0) := -to_signed( 5270, 16); --W=16, F=15
-  constant IIR_S2_INIT : signed(FIR_COEF_DW-1 downto 0) := -to_signed(10403, 16); --W=16, F=15
+  constant IIR_MA1     : signed(FIR_COEF_DW   downto 0) :=  to_signed(64683, 17);
+  constant IIR_S1_INIT : signed(FIR_COEF_DW-1 downto 0) := -to_signed( 5270, 16);
+  constant IIR_S2_INIT : signed(FIR_COEF_DW-1 downto 0) := -to_signed(10403, 16);
 
-  -- Signal declarations
   signal adc_r_smpl_reg : signed(ADC_DW-1 downto 0);
   signal adc_l_smpl_reg : signed(ADC_DW-1 downto 0);
   signal iir_out_reg    : signed(DAC_DW-1 downto 0);
@@ -67,10 +57,10 @@ architecture rtl of ap_user_top is
   signal tick_l         : std_logic;
   signal tick_r         : std_logic;
   signal rot_count      : unsigned(3 downto 0) := (others => '0');
+  signal btn_reg        : std_logic_vector(3 downto 0) := (others => '0');
 
 begin
 
-  -- Assign switches to LEDs for basic status indication
   led_po <= sw_pi;
 
   --------------------------------------------------------------------------
@@ -85,13 +75,27 @@ begin
       if adc_enb_pi = '1' then
         adc_l_smpl_reg <= fir_bank_out_l; 
         
-        -- Filter selection for right channel
         if sw_pi(2) = '1' then
           adc_r_smpl_reg <= fir_bank_out_r;
         else
           adc_r_smpl_reg <= adc_data_pi.r;
         end if;
       end if;
+    end if;
+  end process;
+
+  --------------------------------------------------------------------------
+  -- Button debouncing (create virtual buttons from switches if needed)
+  --------------------------------------------------------------------------
+  P_btn: process(clk_pi, rst_pi)
+  begin
+    if rst_pi = '1' then
+      btn_reg <= (others => '0');
+    elsif rising_edge(clk_pi) then
+      btn_reg(0) <= sw_pi(0);
+      btn_reg(1) <= sw_pi(1);
+      btn_reg(2) <= sw_pi(2);
+      btn_reg(3) <= '0';  -- Not used
     end if;
   end process;
 
@@ -106,11 +110,10 @@ begin
     elsif rising_edge(clk_pi) then
       if dac_enb_pi = '1' then
         
-        -- Source multiplexer
-        if sw_pi(3) = '1' then 
+        if sw_pi(2) = '1' then 
              mux_out_l <= resize(ram_out, ADC_DW);
              mux_out_r <= resize(ram_out, ADC_DW);
-        elsif btn_pi(3) = '1' then 
+        elsif btn_reg(2) = '1' then 
              mux_out_l <= resize(tone_out_l, ADC_DW);
              mux_out_r <= resize(tone_out_r, ADC_DW);
         else
@@ -118,7 +121,6 @@ begin
              mux_out_r <= adc_r_smpl_reg;
         end if;
 
-        -- Channel routing 
         if sw_pi(1 downto 0) = "01" then
           dac_data_po.l <= mux_out_l;
           dac_data_po.r <= (others => '0');
@@ -150,11 +152,8 @@ begin
       s2_reg <= IIR_S2_INIT;
     elsif rising_edge(clk_pi) then
       if adc_enb_pi = '1' then
-        -- Multiplier yields 33 bits (16 bits data + 17 bits coefficient)
         v_prod := s1_reg * IIR_MA1;  
-        -- Align fractional points before subtraction
         v_add  := resize(v_prod, 34) - shift_left(resize(s2_reg, 34), 15);
-        -- Round off 15 fractional bits and saturate to 16-bit output
         v_sat_rnd := f_sat(f_rnd(v_add, 15), DAC_DW);  
         
         s1_reg <= v_sat_rnd;
@@ -207,8 +206,8 @@ begin
     port map (
       clk_pi  => clk_pi, 
       ce_pi   => adc_enb_pi,
-      rec_pi  => btn_pi(1), 
-      play_pi => btn_pi(2), 
+      rec_pi  => btn_reg(1), 
+      play_pi => btn_reg(2), 
       din_pi  => adc_data_pi.l(ADC_DW-1 downto ADC_DW-16), 
       dout_po => ram_out
     );
@@ -227,7 +226,7 @@ begin
       clk_pi    => clk_pi, 
       rst_pi    => rst_pi,
       digit0_pi => std_logic_vector(rot_count), 
-      digit1_pi => "00" & sw_pi(1 downto 0),    
+      digit1_pi => "0" & sw_pi,    
       seg_po    => seg_po, 
       an_po     => an_po
     );

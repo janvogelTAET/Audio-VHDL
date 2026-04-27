@@ -116,6 +116,11 @@ begin
       -- Zybo interfaces
       sw_pi        => sw_pi,
       led_po       => led8_po
+      -- add optional interfaces if needed (rotary encoder, 7-segment display)
+      rot_a_pi     => rot_a_pi,
+      rot_b_pi     => rot_b_pi,
+      seg_po       => seg_po,
+      an_po        => an_po
     );
 
 end architecture rtl;
