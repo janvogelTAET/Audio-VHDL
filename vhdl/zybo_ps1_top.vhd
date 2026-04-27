@@ -1,14 +1,12 @@
 -------------------------------------------------------------------------------
 -- Project: DIDE Audio Processing
--- Entity : ap_top
+-- Entity : zybo_ps1_top
 -- Author : Waj
 -------------------------------------------------------------------------------
 -- Description:
 -- Top-level entity of the audio processing reference design (ZYBO PS1), 
 -- including the the clock/reset generation and SSM2603 codec interface with
 -- initialization via I2C and I2S audio interface logic.
--- Notes:
--- * 
 -------------------------------------------------------------------------------
 library ieee;
 use ieee.std_logic_1164.all;
@@ -30,9 +28,16 @@ entity zybo_ps1_top is
     ac_reclrc_po : out std_logic; -- left/right clock to codec (record)   
     ac_mute_n_po : out std_logic; -- DAC output mute, active-low, PD on board
     -- Control  & Status
-    sw_pi  :  in std_logic_vector(2 downto 0);
+    sw_pi   : in  std_logic_vector(2 downto 0);
     led4_po : out std_logic_vector(3 downto 0);
-    led8_po : out std_logic_vector(2 downto 0)  -- only 3 LEDs used
+    led8_po : out std_logic_vector(2 downto 0);  -- <--- HIER WAR DER FEHLER (Semikolon fehlte)
+
+    -- IO for Semester Project
+    btn_pi   : in  std_logic_vector(2 downto 1);
+    rot_a_pi : in  std_logic;
+    rot_b_pi : in  std_logic;
+    seg_po   : out std_logic_vector(6 downto 0);
+    an_po    : out std_logic_vector(1 downto 0)
   );
 end entity zybo_ps1_top;
 
@@ -115,8 +120,9 @@ begin
       dac_enb_pi   => dac_enb,
       -- Zybo interfaces
       sw_pi        => sw_pi,
-      led_po       => led8_po
-      -- add optional interfaces if needed (rotary encoder, 7-segment display)
+      led_po       => led8_po,  -- <--- HIER WAR DER 2. FEHLER (Komma fehlte)
+      -- IO for Semester Project
+      btn_pi       => btn_pi,
       rot_a_pi     => rot_a_pi,
       rot_b_pi     => rot_b_pi,
       seg_po       => seg_po,

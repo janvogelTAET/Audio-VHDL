@@ -1,81 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1773932217">
+<GenRun Id="synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1777316812">
   <File Type="PA-TCL" Name="zybo_ps1_top.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="zybo_ps1_top_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="zybo_ps1_top_reports.tcl"/>
   <File Type="RDS-RDS" Name="zybo_ps1_top.vds"/>
   <File Type="RDS-UTIL" Name="zybo_ps1_top_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="zybo_ps1_top_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="zybo_ps1_top.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="zybo_ps1_top_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="zybo_ps1_top_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
-    <File Path="$PSRCDIR/sources_1/imports/vhdl/pkg/ac_ssm2603_pkg.vhd">
-      <FileInfo SFType="VHDL2008">
-        <Attr Name="Library" Val="work"/>
-        <Attr Name="ImportPath" Val="$PPRDIR/../vhdl/pkg/ac_ssm2603_pkg.vhd"/>
-        <Attr Name="ImportTime" Val="1773929655"/>
+    <File Path="$PSRCDIR/sources_1/imports/audio/ton_gen.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../vhdl/ap_user/audio/ton_gen.vhd"/>
+        <Attr Name="ImportTime" Val="1774793718"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/vhdl/pkg/ap_design_pkg.vhd">
+    <File Path="$PPRDIR/../vhdl/pkg/ac_ssm2603_pkg.vhd">
       <FileInfo SFType="VHDL2008">
         <Attr Name="Library" Val="work"/>
-        <Attr Name="ImportPath" Val="$PPRDIR/../vhdl/pkg/ap_design_pkg.vhd"/>
-        <Attr Name="ImportTime" Val="1773929655"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/vhdl/ap_codec/ac_i2c_master.vhd">
+    <File Path="$PPRDIR/../vhdl/pkg/ap_design_pkg.vhd">
       <FileInfo SFType="VHDL2008">
         <Attr Name="Library" Val="work"/>
-        <Attr Name="ImportPath" Val="$PPRDIR/../vhdl/ap_codec/ac_i2c_master.vhd"/>
-        <Attr Name="ImportTime" Val="1773929655"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/vhdl/ap_codec/ac_i2c_wrapper.vhd">
+    <File Path="$PPRDIR/../vhdl/ap_codec/ac_i2c_master.vhd">
       <FileInfo SFType="VHDL2008">
         <Attr Name="Library" Val="work"/>
-        <Attr Name="ImportPath" Val="$PPRDIR/../vhdl/ap_codec/ac_i2c_wrapper.vhd"/>
-        <Attr Name="ImportTime" Val="1773929655"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/vhdl/ap_codec/ac_i2c_if.vhd">
+    <File Path="$PPRDIR/../vhdl/ap_codec/ac_i2c_wrapper.vhd">
       <FileInfo SFType="VHDL2008">
         <Attr Name="Library" Val="work"/>
-        <Attr Name="ImportPath" Val="$PPRDIR/../vhdl/ap_codec/ac_i2c_if.vhd"/>
-        <Attr Name="ImportTime" Val="1773929655"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/vhdl/ap_codec/ac_i2s_if.vhd">
+    <File Path="$PPRDIR/../vhdl/ap_codec/ac_i2c_if.vhd">
       <FileInfo SFType="VHDL2008">
         <Attr Name="Library" Val="work"/>
-        <Attr Name="ImportPath" Val="$PPRDIR/../vhdl/ap_codec/ac_i2s_if.vhd"/>
-        <Attr Name="ImportTime" Val="1773929655"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/vhdl/ap_codec/ap_codec_if.vhd">
+    <File Path="$PPRDIR/../vhdl/ap_codec/ac_i2s_if.vhd">
       <FileInfo SFType="VHDL2008">
         <Attr Name="Library" Val="work"/>
-        <Attr Name="ImportPath" Val="$PPRDIR/../vhdl/ap_codec/ap_codec_if.vhd"/>
-        <Attr Name="ImportTime" Val="1773929655"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/vhdl/pkg/ap_fir_pkg.vhd">
+    <File Path="$PPRDIR/../vhdl/ap_codec/ap_codec_if.vhd">
       <FileInfo SFType="VHDL2008">
         <Attr Name="Library" Val="work"/>
-        <Attr Name="ImportPath" Val="$PPRDIR/../vhdl/pkg/ap_fir_pkg.vhd"/>
-        <Attr Name="ImportTime" Val="1773929655"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../vhdl/pkg/ap_fir_pkg.vhd">
+      <FileInfo SFType="VHDL2008">
+        <Attr Name="Library" Val="work"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
@@ -87,47 +82,89 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/vhdl/ap_user/ap_user_top.vhd">
+    <File Path="$PPRDIR/../vhdl/ap_user/fir/fir_sel.vhd">
       <FileInfo SFType="VHDL2008">
         <Attr Name="Library" Val="work"/>
-        <Attr Name="ImportPath" Val="$PPRDIR/../vhdl/ap_user/ap_user_top.vhd"/>
-        <Attr Name="ImportTime" Val="1776267008"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/vhdl/ap_clk_rst/clk_gen.vhd">
+    <File Path="$PPRDIR/../vhdl/ap_user/audio/audio_ram.vhd">
       <FileInfo SFType="VHDL2008">
         <Attr Name="Library" Val="work"/>
-        <Attr Name="ImportPath" Val="$PPRDIR/../vhdl/ap_clk_rst/clk_gen.vhd"/>
-        <Attr Name="ImportTime" Val="1773929655"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/vhdl/ap_clk_rst/rst_gen.vhd">
+    <File Path="$PPRDIR/../vhdl/ap_user/seg/enc_decoder.vhd">
       <FileInfo SFType="VHDL2008">
         <Attr Name="Library" Val="work"/>
-        <Attr Name="ImportPath" Val="$PPRDIR/../vhdl/ap_clk_rst/rst_gen.vhd"/>
-        <Attr Name="ImportTime" Val="1773929655"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/vhdl/ap_clk_rst/clk_rst_gen.vhd">
+    <File Path="$PPRDIR/../vhdl/ap_user/seg/seg7_driver.vhd">
       <FileInfo SFType="VHDL2008">
         <Attr Name="Library" Val="work"/>
-        <Attr Name="ImportPath" Val="$PPRDIR/../vhdl/ap_clk_rst/clk_rst_gen.vhd"/>
-        <Attr Name="ImportTime" Val="1773929655"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/vhdl/zybo_ps1_top.vhd">
+    <File Path="$PPRDIR/../vhdl/ap_user/ap_user_top.vhd">
       <FileInfo SFType="VHDL2008">
         <Attr Name="Library" Val="work"/>
-        <Attr Name="ImportPath" Val="$PPRDIR/../vhdl/zybo_ps1_top.vhd"/>
-        <Attr Name="ImportTime" Val="1773929655"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../vhdl/ap_clk_rst/clk_gen.vhd">
+      <FileInfo SFType="VHDL2008">
+        <Attr Name="Library" Val="work"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../vhdl/ap_clk_rst/rst_gen.vhd">
+      <FileInfo SFType="VHDL2008">
+        <Attr Name="Library" Val="work"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../vhdl/ap_clk_rst/clk_rst_gen.vhd">
+      <FileInfo SFType="VHDL2008">
+        <Attr Name="Library" Val="work"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../vhdl/zybo_ps1_top.vhd">
+      <FileInfo SFType="VHDL2008">
+        <Attr Name="Library" Val="work"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../vhdl/pkg/ap_dds_pkg.vhd">
+      <FileInfo SFType="VHDL2008">
+        <Attr Name="Library" Val="work"/>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../vhdl/ap_user/dds/dds.vhd">
+      <FileInfo SFType="VHDL2008">
+        <Attr Name="Library" Val="work"/>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../vhdl/ap_user/fir/fir_par.vhd">
+      <FileInfo SFType="VHDL2008">
+        <Attr Name="Library" Val="work"/>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
@@ -140,10 +177,9 @@
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
     <Filter Type="Constrs"/>
-    <File Path="$PSRCDIR/constrs_1/imports/ctrl/ap_top.xdc">
+    <File Path="$PPRDIR/../ctrl/ap_top.xdc">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../ctrl/ap_top.xdc"/>
-        <Attr Name="ImportTime" Val="1773929655"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
       </FileInfo>
     </File>
@@ -158,7 +194,9 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2019"/>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2019">
+      <Desc>Vivado Synthesis Defaults</Desc>
+    </StratHandle>
     <Step Id="synth_design"/>
   </Strategy>
 </GenRun>

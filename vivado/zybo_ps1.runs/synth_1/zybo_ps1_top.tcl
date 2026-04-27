@@ -28,6 +28,7 @@ set_property default_lib work [current_project]
 set_property target_language VHDL [current_project]
 set_property ip_output_repo c:/git/DIDE/dide_fs26/zybo_ps1/vivado/zybo_ps1.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
+read_vhdl -library work C:/git/DIDE/dide_fs26/zybo_ps1/vivado/zybo_ps1.srcs/sources_1/imports/audio/ton_gen.vhd
 read_vhdl -vhdl2008 -library work {
   C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/pkg/ac_ssm2603_pkg.vhd
   C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/pkg/ap_design_pkg.vhd
@@ -38,6 +39,10 @@ read_vhdl -vhdl2008 -library work {
   C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_codec/ap_codec_if.vhd
   C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/pkg/ap_fir_pkg.vhd
   C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_user/fir/fir_trn.vhd
+  C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_user/fir/fir_sel.vhd
+  C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_user/audio/audio_ram.vhd
+  C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_user/seg/enc_decoder.vhd
+  C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_user/seg/seg7_driver.vhd
   C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_user/ap_user_top.vhd
   C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_clk_rst/clk_gen.vhd
   C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_clk_rst/rst_gen.vhd
@@ -52,6 +57,9 @@ read_vhdl -vhdl2008 -library work {
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
+read_xdc C:/git/DIDE/dide_fs26/zybo_ps1/ctrl/ap_top.xdc
+set_property used_in_implementation false [get_files C:/git/DIDE/dide_fs26/zybo_ps1/ctrl/ap_top.xdc]
+
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]
 

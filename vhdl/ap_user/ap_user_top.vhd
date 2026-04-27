@@ -1,7 +1,7 @@
 -------------------------------------------------------------------------------
 -- Project: DIDE Audio Processing
 -- Entity : ap_user_top
--- Author : Waj
+-- Author : Waj, VJA
 -------------------------------------------------------------------------------
 library ieee;
 use ieee.std_logic_1164.all;
@@ -13,33 +13,39 @@ entity ap_user_top is
   port (
     clk_pi      : in  std_logic;  
     rst_pi      : in  std_logic;  
-    -- Audio Codec data interface
+    
+    -- Audio codec data interface
     adc_data_pi : in  t_adc_smpl;
     adc_enb_pi  : in  std_logic;
     dac_data_po : out t_dac_smpl;
     dac_enb_pi  : in  std_logic;
-    -- Zybo interfaces
-    sw_pi       : in  std_logic_vector(2 downto 0);  -- Changed to 3 bits
-    led_po      : out std_logic_vector(2 downto 0);  -- Changed to 3 bits
-    -- Rotary encoder interface (optional - add if needed)
+    
+    -- Zybo base interfaces
+    sw_pi       : in  std_logic_vector(2 downto 0); 
+    led_po      : out std_logic_vector(2 downto 0);
+    
+    -- Expansion interfaces
+    btn_pi      : in  std_logic_vector(2 downto 1) := "00";
     rot_a_pi    : in  std_logic := '0';
     rot_b_pi    : in  std_logic := '0';
-    -- 7-Segment display interface (optional - add if needed)
     seg_po      : out std_logic_vector(6 downto 0);
     an_po       : out std_logic_vector(1 downto 0)
   );
 end entity ap_user_top;
 
 architecture rtl of ap_user_top is
+
+  -- FIR and IIR constants
   constant FIR_COEF     : t_fir_coef := C_FIR_HP9;         
   constant N_TAPS       : natural := 9;                    
   constant FIR_OUT_DW   : natural := f_fir_out_dw(N_TAPS); 
   constant RND_OFF_BITS : natural := FIR_COEF_DW-5;        
   
-  constant IIR_MA1     : signed(FIR_COEF_DW   downto 0) :=  to_signed(64683, 17);
-  constant IIR_S1_INIT : signed(FIR_COEF_DW-1 downto 0) := -to_signed( 5270, 16);
-  constant IIR_S2_INIT : signed(FIR_COEF_DW-1 downto 0) := -to_signed(10403, 16);
+  constant IIR_MA1      : signed(FIR_COEF_DW   downto 0) :=  to_signed(64683, 17);
+  constant IIR_S1_INIT  : signed(FIR_COEF_DW-1 downto 0) := -to_signed( 5270, 16);
+  constant IIR_S2_INIT  : signed(FIR_COEF_DW-1 downto 0) := -to_signed(10403, 16);
 
+  -- Data pipelines
   signal adc_r_smpl_reg : signed(ADC_DW-1 downto 0);
   signal adc_l_smpl_reg : signed(ADC_DW-1 downto 0);
   signal iir_out_reg    : signed(DAC_DW-1 downto 0);
@@ -49,22 +55,20 @@ architecture rtl of ap_user_top is
   signal fir_bank_out_r : signed(ADC_DW-1 downto 0);
   signal tone_out_l     : signed(15 downto 0);
   signal tone_out_r     : signed(15 downto 0);
-  
-  signal mux_out_l      : signed(ADC_DW-1 downto 0);
-  signal mux_out_r      : signed(ADC_DW-1 downto 0);
   signal ram_out        : signed(15 downto 0);
   
+  -- UI and control signals
   signal tick_l         : std_logic;
   signal tick_r         : std_logic;
   signal rot_count      : unsigned(3 downto 0) := (others => '0');
-  signal btn_reg        : std_logic_vector(3 downto 0) := (others => '0');
 
 begin
 
+  -- Map switch states to LEDs for visual confirmation
   led_po <= sw_pi;
 
   --------------------------------------------------------------------------
-  -- Input registration and default routing
+  -- Input registration and live audio routing
   --------------------------------------------------------------------------
   P_adc_avg: process(clk_pi, rst_pi)
   begin
@@ -75,6 +79,7 @@ begin
       if adc_enb_pi = '1' then
         adc_l_smpl_reg <= fir_bank_out_l; 
         
+        -- Filter selection for right channel
         if sw_pi(2) = '1' then
           adc_r_smpl_reg <= fir_bank_out_r;
         else
@@ -85,22 +90,7 @@ begin
   end process;
 
   --------------------------------------------------------------------------
-  -- Button debouncing (create virtual buttons from switches if needed)
-  --------------------------------------------------------------------------
-  P_btn: process(clk_pi, rst_pi)
-  begin
-    if rst_pi = '1' then
-      btn_reg <= (others => '0');
-    elsif rising_edge(clk_pi) then
-      btn_reg(0) <= sw_pi(0);
-      btn_reg(1) <= sw_pi(1);
-      btn_reg(2) <= sw_pi(2);
-      btn_reg(3) <= '0';  -- Not used
-    end if;
-  end process;
-
-  --------------------------------------------------------------------------
-  -- Audio multiplexing and channel routing to DAC
+  -- Output multiplexer and priority routing
   --------------------------------------------------------------------------
   P_lr_ch: process(clk_pi, rst_pi)
   begin
@@ -110,30 +100,20 @@ begin
     elsif rising_edge(clk_pi) then
       if dac_enb_pi = '1' then
         
-        if sw_pi(2) = '1' then 
-             mux_out_l <= resize(ram_out, ADC_DW);
-             mux_out_r <= resize(ram_out, ADC_DW);
-        elsif btn_reg(2) = '1' then 
-             mux_out_l <= resize(tone_out_l, ADC_DW);
-             mux_out_r <= resize(tone_out_r, ADC_DW);
+        if btn_pi(2) = '1' then
+          -- Priority 1: Audio RAM playback
+          dac_data_po.l <= resize(ram_out, DAC_DW);
+          dac_data_po.r <= resize(ram_out, DAC_DW);
+        elsif sw_pi(2) = '1' then
+          -- Priority 2: Tone generator output
+          dac_data_po.l <= resize(tone_out_l, DAC_DW);
+          dac_data_po.r <= resize(tone_out_r, DAC_DW);
         else
-             mux_out_l <= adc_l_smpl_reg;
-             mux_out_r <= adc_r_smpl_reg;
+          -- Priority 3: Live audio pass-through
+          dac_data_po.l <= adc_l_smpl_reg;
+          dac_data_po.r <= adc_r_smpl_reg;
         end if;
-
-        if sw_pi(1 downto 0) = "01" then
-          dac_data_po.l <= mux_out_l;
-          dac_data_po.r <= (others => '0');
-        elsif sw_pi(1 downto 0) = "10" then
-          dac_data_po.l <= (others => '0');
-          dac_data_po.r <= mux_out_r;
-        elsif sw_pi(1 downto 0) = "11" then
-          dac_data_po.l <= mux_out_r;
-          dac_data_po.r <= mux_out_l;
-        else
-          dac_data_po.l <= mux_out_l;
-          dac_data_po.r <= mux_out_r;
-        end if; 
+        
       end if;     
     end if;
   end process;
@@ -144,27 +124,29 @@ begin
   P_iir_osci: process(clk_pi, rst_pi)
     variable v_prod    : signed(32 downto 0);
     variable v_add     : signed(33 downto 0);
-    variable v_sat_rnd : signed(15 downto 0);
+    variable v_sat_rnd : signed(DAC_DW-1 downto 0);
   begin
     if rst_pi = '1' then
       iir_out_reg <= (others => '0');
-      s1_reg <= IIR_S1_INIT;
-      s2_reg <= IIR_S2_INIT;
+      s1_reg      <= IIR_S1_INIT;
+      s2_reg      <= IIR_S2_INIT;
     elsif rising_edge(clk_pi) then
       if adc_enb_pi = '1' then
-        v_prod := s1_reg * IIR_MA1;  
-        v_add  := resize(v_prod, 34) - shift_left(resize(s2_reg, 34), 15);
-        v_sat_rnd := f_sat(f_rnd(v_add, 15), DAC_DW);  
+        v_prod    := s1_reg * IIR_MA1;  
+        v_add     := resize(v_prod, 34) - shift_left(resize(s2_reg, 34), 15);
         
-        s1_reg <= v_sat_rnd;
-        s2_reg <= s1_reg;
+        -- f_rnd(v_add, 19) schneidet 15 Bits ab (34 - 15 = 19 Ziel-Breite)
+        v_sat_rnd := f_sat(f_rnd(v_add, 19), DAC_DW);  
+        
+        s1_reg      <= v_sat_rnd;
+        s2_reg      <= s1_reg;
         iir_out_reg <= v_sat_rnd;
       end if;
     end if;
   end process;
 
   --------------------------------------------------------------------------
-  -- Rotary encoder pulse counter
+  -- Rotary encoder quadrature pulse tracking
   --------------------------------------------------------------------------
   P_rot_cnt : process(clk_pi)
   begin
@@ -179,7 +161,7 @@ begin
   end process;
 
   --------------------------------------------------------------------------
-  -- Component instantiations
+  -- Submodule instantiations
   --------------------------------------------------------------------------
   u_fir_bank : entity work.fir_sel
     port map (
@@ -206,8 +188,8 @@ begin
     port map (
       clk_pi  => clk_pi, 
       ce_pi   => adc_enb_pi,
-      rec_pi  => btn_reg(1), 
-      play_pi => btn_reg(2), 
+      rec_pi  => btn_pi(1), 
+      play_pi => btn_pi(2), 
       din_pi  => adc_data_pi.l(ADC_DW-1 downto ADC_DW-16), 
       dout_po => ram_out
     );
