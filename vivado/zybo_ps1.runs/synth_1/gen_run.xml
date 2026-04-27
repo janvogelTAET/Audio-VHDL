@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1773932217">
+  <File Type="PA-TCL" Name="zybo_ps1_top.tcl"/>
+  <File Type="REPORTS-TCL" Name="zybo_ps1_top_reports.tcl"/>
+  <File Type="RDS-RDS" Name="zybo_ps1_top.vds"/>
+  <File Type="RDS-UTIL" Name="zybo_ps1_top_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="zybo_ps1_top_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="zybo_ps1_top.dcp"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/imports/vhdl/pkg/ac_ssm2603_pkg.vhd">
+      <FileInfo SFType="VHDL2008">
+        <Attr Name="Library" Val="work"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../vhdl/pkg/ac_ssm2603_pkg.vhd"/>
+        <Attr Name="ImportTime" Val="1773929655"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/vhdl/pkg/ap_design_pkg.vhd">
+      <FileInfo SFType="VHDL2008">
+        <Attr Name="Library" Val="work"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../vhdl/pkg/ap_design_pkg.vhd"/>
+        <Attr Name="ImportTime" Val="1773929655"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/vhdl/ap_codec/ac_i2c_master.vhd">
+      <FileInfo SFType="VHDL2008">
+        <Attr Name="Library" Val="work"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../vhdl/ap_codec/ac_i2c_master.vhd"/>
+        <Attr Name="ImportTime" Val="1773929655"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/vhdl/ap_codec/ac_i2c_wrapper.vhd">
+      <FileInfo SFType="VHDL2008">
+        <Attr Name="Library" Val="work"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../vhdl/ap_codec/ac_i2c_wrapper.vhd"/>
+        <Attr Name="ImportTime" Val="1773929655"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/vhdl/ap_codec/ac_i2c_if.vhd">
+      <FileInfo SFType="VHDL2008">
+        <Attr Name="Library" Val="work"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../vhdl/ap_codec/ac_i2c_if.vhd"/>
+        <Attr Name="ImportTime" Val="1773929655"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/vhdl/ap_codec/ac_i2s_if.vhd">
+      <FileInfo SFType="VHDL2008">
+        <Attr Name="Library" Val="work"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../vhdl/ap_codec/ac_i2s_if.vhd"/>
+        <Attr Name="ImportTime" Val="1773929655"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/vhdl/ap_codec/ap_codec_if.vhd">
+      <FileInfo SFType="VHDL2008">
+        <Attr Name="Library" Val="work"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../vhdl/ap_codec/ap_codec_if.vhd"/>
+        <Attr Name="ImportTime" Val="1773929655"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/vhdl/pkg/ap_fir_pkg.vhd">
+      <FileInfo SFType="VHDL2008">
+        <Attr Name="Library" Val="work"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../vhdl/pkg/ap_fir_pkg.vhd"/>
+        <Attr Name="ImportTime" Val="1773929655"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../vhdl/ap_user/fir/fir_trn.vhd">
+      <FileInfo SFType="VHDL2008">
+        <Attr Name="Library" Val="work"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/vhdl/ap_user/ap_user_top.vhd">
+      <FileInfo SFType="VHDL2008">
+        <Attr Name="Library" Val="work"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../vhdl/ap_user/ap_user_top.vhd"/>
+        <Attr Name="ImportTime" Val="1776267008"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/vhdl/ap_clk_rst/clk_gen.vhd">
+      <FileInfo SFType="VHDL2008">
+        <Attr Name="Library" Val="work"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../vhdl/ap_clk_rst/clk_gen.vhd"/>
+        <Attr Name="ImportTime" Val="1773929655"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/vhdl/ap_clk_rst/rst_gen.vhd">
+      <FileInfo SFType="VHDL2008">
+        <Attr Name="Library" Val="work"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../vhdl/ap_clk_rst/rst_gen.vhd"/>
+        <Attr Name="ImportTime" Val="1773929655"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/vhdl/ap_clk_rst/clk_rst_gen.vhd">
+      <FileInfo SFType="VHDL2008">
+        <Attr Name="Library" Val="work"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../vhdl/ap_clk_rst/clk_rst_gen.vhd"/>
+        <Attr Name="ImportTime" Val="1773929655"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/vhdl/zybo_ps1_top.vhd">
+      <FileInfo SFType="VHDL2008">
+        <Attr Name="Library" Val="work"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../vhdl/zybo_ps1_top.vhd"/>
+        <Attr Name="ImportTime" Val="1773929655"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="zybo_ps1_top"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/imports/ctrl/ap_top.xdc">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../ctrl/ap_top.xdc"/>
+        <Attr Name="ImportTime" Val="1773929655"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
+    <Filter Type="Utils"/>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2019"/>
+    <Step Id="synth_design"/>
+  </Strategy>
+</GenRun>

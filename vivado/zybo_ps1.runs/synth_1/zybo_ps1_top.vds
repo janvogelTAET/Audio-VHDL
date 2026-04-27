@@ -1,0 +1,649 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Thu Mar 19 15:57:03 2026
+# Process ID: 27676
+# Current directory: C:/git/DIDE/dide_fs26/zybo_ps1/vivado/zybo_ps1.runs/synth_1
+# Command line: vivado.exe -log zybo_ps1_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source zybo_ps1_top.tcl
+# Log file: C:/git/DIDE/dide_fs26/zybo_ps1/vivado/zybo_ps1.runs/synth_1/zybo_ps1_top.vds
+# Journal file: C:/git/DIDE/dide_fs26/zybo_ps1/vivado/zybo_ps1.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source zybo_ps1_top.tcl -notrace
+Command: synth_design -top zybo_ps1_top -part xc7z010clg400-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 24340 
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 513.051 ; gain = 213.180
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'zybo_ps1_top' [C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/zybo_ps1_top.vhd:39]
+INFO: [Synth 8-638] synthesizing module 'clk_rst_gen' [C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_clk_rst/clk_rst_gen.vhd:28]
+INFO: [Synth 8-638] synthesizing module 'clk_gen' [C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_clk_rst/clk_gen.vhd:34]
+INFO: [Synth 8-113] binding component instance 'u_bufg_clk_in' to cell 'BUFG' [C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_clk_rst/clk_gen.vhd:75]
+	Parameter BANDWIDTH bound to: OPTIMIZED - type: string 
+	Parameter CLKFBOUT_MULT_F bound to: 24.000000 - type: double 
+	Parameter CLKFBOUT_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKIN1_PERIOD bound to: 8.000000 - type: double 
+	Parameter CLKOUT0_DIVIDE_F bound to: 6.000000 - type: double 
+	Parameter CLKOUT0_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT0_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT1_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT1_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT1_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT2_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT2_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT2_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT3_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT3_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT3_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT4_CASCADE bound to: 0 - type: bool 
+	Parameter CLKOUT4_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT4_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT4_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT5_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT5_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT5_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT6_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT6_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT6_PHASE bound to: 0.000000 - type: double 
+	Parameter DIVCLK_DIVIDE bound to: 5 - type: integer 
+	Parameter REF_JITTER1 bound to: 0.010000 - type: double 
+	Parameter STARTUP_WAIT bound to: 0 - type: bool 
+INFO: [Synth 8-113] binding component instance 'u_mmcm1' to cell 'MMCME2_BASE' [C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_clk_rst/clk_gen.vhd:87]
+INFO: [Synth 8-113] binding component instance 'u_mmcm1_fb_bufg' to cell 'BUFG' [C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_clk_rst/clk_gen.vhd:145]
+INFO: [Synth 8-113] binding component instance 'u_bufg_clk_sys' to cell 'BUFG' [C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_clk_rst/clk_gen.vhd:152]
+	Parameter BANDWIDTH bound to: OPTIMIZED - type: string 
+	Parameter CLKFBOUT_MULT_F bound to: 48.000000 - type: double 
+	Parameter CLKFBOUT_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKIN1_PERIOD bound to: 10.000000 - type: double 
+	Parameter CLKOUT0_DIVIDE_F bound to: 78.125000 - type: double 
+	Parameter CLKOUT0_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT0_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT1_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT1_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT1_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT2_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT2_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT2_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT3_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT3_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT3_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT4_CASCADE bound to: 0 - type: bool 
+	Parameter CLKOUT4_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT4_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT4_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT5_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT5_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT5_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT6_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT6_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT6_PHASE bound to: 0.000000 - type: double 
+	Parameter DIVCLK_DIVIDE bound to: 5 - type: integer 
+	Parameter REF_JITTER1 bound to: 0.010000 - type: double 
+	Parameter STARTUP_WAIT bound to: 0 - type: bool 
+INFO: [Synth 8-113] binding component instance 'u_mmcm2' to cell 'MMCME2_BASE' [C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_clk_rst/clk_gen.vhd:164]
+INFO: [Synth 8-113] binding component instance 'u_mmcm2_fb_bufg' to cell 'BUFG' [C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_clk_rst/clk_gen.vhd:222]
+INFO: [Synth 8-113] binding component instance 'u_bufg_ac_mclk' to cell 'BUFG' [C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_clk_rst/clk_gen.vhd:229]
+INFO: [Synth 8-256] done synthesizing module 'clk_gen' (1#1) [C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_clk_rst/clk_gen.vhd:34]
+INFO: [Synth 8-638] synthesizing module 'rst_gen' [C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_clk_rst/rst_gen.vhd:47]
+INFO: [Synth 8-256] done synthesizing module 'rst_gen' (2#1) [C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_clk_rst/rst_gen.vhd:47]
+INFO: [Synth 8-256] done synthesizing module 'clk_rst_gen' (3#1) [C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_clk_rst/clk_rst_gen.vhd:28]
+INFO: [Synth 8-638] synthesizing module 'ap_codec_if' [C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_codec/ap_codec_if.vhd:49]
+INFO: [Synth 8-638] synthesizing module 'ac_i2c_if' [C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_codec/ac_i2c_if.vhd:48]
+	Parameter g_init_idx bound to: 1 - type: integer 
+	Parameter g_read_back bound to: 0 - type: bool 
+	Parameter g_powup_wait_cycles bound to: 33554432 - type: integer 
+	Parameter g_vmid_wait_cycles bound to: 16777216 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'ac_i2c_wrapper' [C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_codec/ac_i2c_wrapper.vhd:79]
+INFO: [Synth 8-638] synthesizing module 'ac_i2c_master' [C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_codec/ac_i2c_master.vhd:61]
+	Parameter input_clk bound to: 100000000 - type: integer 
+	Parameter bus_clk bound to: 400000 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'ac_i2c_master' (4#1) [C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_codec/ac_i2c_master.vhd:61]
+INFO: [Synth 8-256] done synthesizing module 'ac_i2c_wrapper' (5#1) [C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_codec/ac_i2c_wrapper.vhd:79]
+INFO: [Synth 8-256] done synthesizing module 'ac_i2c_if' (6#1) [C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_codec/ac_i2c_if.vhd:48]
+INFO: [Synth 8-638] synthesizing module 'ac_i2s_if' [C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_codec/ac_i2s_if.vhd:44]
+INFO: [Synth 8-256] done synthesizing module 'ac_i2s_if' (7#1) [C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_codec/ac_i2s_if.vhd:44]
+INFO: [Synth 8-256] done synthesizing module 'ap_codec_if' (8#1) [C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_codec/ap_codec_if.vhd:49]
+INFO: [Synth 8-638] synthesizing module 'ap_user_top' [C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_user/ap_user_top.vhd:35]
+INFO: [Synth 8-638] synthesizing module 'fir_trn' [C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_user/fir/fir_trn.vhd:32]
+	Parameter g_coef bound to: 2048'b00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000111111010111000111111001100110101111010001111011111010111000010101010001111011001110101110000101111101000111101111111001100110101111110101110001 
+	Parameter g_taps bound to: 9 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'fir_trn' (9#1) [C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_user/fir/fir_trn.vhd:32]
+INFO: [Synth 8-256] done synthesizing module 'ap_user_top' (10#1) [C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_user/ap_user_top.vhd:35]
+INFO: [Synth 8-256] done synthesizing module 'zybo_ps1_top' (11#1) [C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/zybo_ps1_top.vhd:39]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 589.422 ; gain = 289.551
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 589.422 ; gain = 289.551
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z010clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 589.422 ; gain = 289.551
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'ac_i2c_master'
+INFO: [Synth 8-802] inferred FSM for state register 'state_q_reg' in module 'ac_i2c_wrapper'
+INFO: [Synth 8-802] inferred FSM for state register 'state_q_reg' in module 'ac_i2c_if'
+INFO: [Synth 8-5544] ROM "verify_error_d" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                   ready |                        000000001 |                             0000
+                   start |                        000000010 |                             0001
+                 command |                        000000100 |                             0010
+                slv_ack1 |                        000001000 |                             0011
+                      wr |                        000010000 |                             0100
+                slv_ack2 |                        000100000 |                             0110
+                      rd |                        001000000 |                             0101
+                mstr_ack |                        010000000 |                             0111
+                    stop |                        100000000 |                             1000
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'ac_i2c_master'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    idle |                             0000 |                             0000
+              wr_send_hi |                             0001 |                             0001
+              wr_wait_hi |                             0010 |                             0010
+              wr_send_lo |                             0011 |                             0011
+              wr_wait_lo |                             0100 |                             0100
+                 wr_done |                             0101 |                             0101
+             rd_ptr_send |                             0110 |                             0110
+         rd_ptr_inflight |                             0111 |                             0111
+         rd_restart_wait |                             1000 |                             1000
+           rd_wait_first |                             1001 |                             1001
+          rd_wait_second |                             1010 |                             1010
+                 rd_done |                             1011 |                             1011
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_q_reg' using encoding 'sequential' in module 'ac_i2c_wrapper'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+            wait_powerup |                       0000000001 |                             0000
+             start_write |                       0000000010 |                             0001
+              wait_write |                       0000000100 |                             0010
+                next_reg |                       0000001000 |                             0011
+               wait_vmid |                       0000010000 |                             0100
+         start_post_vmid |                       0000100000 |                             0101
+          wait_post_vmid |                       0001000000 |                             0110
+                    done |                       0010000000 |                             1100
+        start_mute_write |                       0100000000 |                             1010
+         wait_mute_write |                       1000000000 |                             1011
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_q_reg' using encoding 'one-hot' in module 'ac_i2c_if'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 589.422 ; gain = 289.551
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     26 Bit       Adders := 1     
+	   2 Input     25 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 2     
+	   2 Input      4 Bit       Adders := 2     
+	   2 Input      3 Bit       Adders := 1     
++---Registers : 
+	               26 Bit    Registers := 1     
+	               20 Bit    Registers := 9     
+	               16 Bit    Registers := 14    
+	                9 Bit    Registers := 2     
+	                8 Bit    Registers := 9     
+	                7 Bit    Registers := 3     
+	                4 Bit    Registers := 2     
+	                3 Bit    Registers := 3     
+	                2 Bit    Registers := 3     
+	                1 Bit    Registers := 24    
++---Muxes : 
+	   2 Input     26 Bit        Muxes := 2     
+	  10 Input     26 Bit        Muxes := 1     
+	   2 Input     25 Bit        Muxes := 3     
+	   3 Input     16 Bit        Muxes := 2     
+	   2 Input     16 Bit        Muxes := 3     
+	   4 Input     16 Bit        Muxes := 2     
+	  10 Input     10 Bit        Muxes := 1     
+	   2 Input     10 Bit        Muxes := 2     
+	   9 Input      9 Bit        Muxes := 1     
+	   2 Input      9 Bit        Muxes := 11    
+	  12 Input      9 Bit        Muxes := 1     
+	   4 Input      9 Bit        Muxes := 1     
+	  11 Input      9 Bit        Muxes := 1     
+	   3 Input      9 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 5     
+	   6 Input      8 Bit        Muxes := 1     
+	  12 Input      8 Bit        Muxes := 1     
+	   4 Input      8 Bit        Muxes := 1     
+	   4 Input      7 Bit        Muxes := 1     
+	   4 Input      5 Bit        Muxes := 1     
+	  12 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 2     
+	   4 Input      4 Bit        Muxes := 3     
+	   3 Input      4 Bit        Muxes := 1     
+	  10 Input      4 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 2     
+	   3 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 15    
+	   3 Input      1 Bit        Muxes := 3     
+	   9 Input      1 Bit        Muxes := 7     
+	   6 Input      1 Bit        Muxes := 3     
+	  12 Input      1 Bit        Muxes := 12    
+	   4 Input      1 Bit        Muxes := 1     
+	  10 Input      1 Bit        Muxes := 8     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module rst_gen 
+Detailed RTL Component Info : 
++---Registers : 
+	                3 Bit    Registers := 2     
+	                1 Bit    Registers := 2     
+Module ac_i2c_master 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      8 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 1     
++---Registers : 
+	                8 Bit    Registers := 5     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 8     
++---Muxes : 
+	   9 Input      9 Bit        Muxes := 1     
+	   2 Input      9 Bit        Muxes := 9     
+	   2 Input      8 Bit        Muxes := 4     
+	   6 Input      8 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 5     
+	   3 Input      1 Bit        Muxes := 1     
+	   9 Input      1 Bit        Muxes := 7     
+	   6 Input      1 Bit        Muxes := 3     
+Module ac_i2c_wrapper 
+Detailed RTL Component Info : 
++---Registers : 
+	                9 Bit    Registers := 2     
+	                8 Bit    Registers := 3     
+	                7 Bit    Registers := 3     
+	                1 Bit    Registers := 5     
++---Muxes : 
+	  12 Input      9 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 1     
+	  12 Input      8 Bit        Muxes := 1     
+	  12 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	  12 Input      1 Bit        Muxes := 12    
+Module ac_i2c_if 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     26 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 1     
++---Registers : 
+	               26 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                2 Bit    Registers := 3     
+	                1 Bit    Registers := 6     
++---Muxes : 
+	   2 Input     26 Bit        Muxes := 2     
+	  10 Input     26 Bit        Muxes := 1     
+	  10 Input     10 Bit        Muxes := 1     
+	   2 Input     10 Bit        Muxes := 2     
+	   4 Input      9 Bit        Muxes := 1     
+	  11 Input      9 Bit        Muxes := 1     
+	   2 Input      9 Bit        Muxes := 2     
+	   3 Input      9 Bit        Muxes := 1     
+	   4 Input      8 Bit        Muxes := 1     
+	   4 Input      7 Bit        Muxes := 1     
+	   4 Input      5 Bit        Muxes := 1     
+	   4 Input      4 Bit        Muxes := 3     
+	   2 Input      4 Bit        Muxes := 1     
+	   3 Input      4 Bit        Muxes := 1     
+	  10 Input      4 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 1     
+	   3 Input      2 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 9     
+	   3 Input      1 Bit        Muxes := 2     
+	  10 Input      1 Bit        Muxes := 8     
+Module ac_i2s_if 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      8 Bit       Adders := 1     
++---Registers : 
+	               16 Bit    Registers := 10    
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   3 Input     16 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 1     
+Module fir_trn 
+Detailed RTL Component Info : 
++---Registers : 
+	               20 Bit    Registers := 9     
+Module ap_user_top 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     25 Bit       Adders := 1     
++---Registers : 
+	               16 Bit    Registers := 4     
++---Muxes : 
+	   2 Input     25 Bit        Muxes := 3     
+	   2 Input     16 Bit        Muxes := 1     
+	   3 Input     16 Bit        Muxes := 1     
+	   4 Input     16 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 80 (col length:40)
+BRAMs: 120 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-4471] merging register 'u_ap_user_top/u_fir/inreg_reg[19:0]' into 'u_ap_user_top/u_fir/inreg_reg[19:0]' [C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_user/fir/fir_trn.vhd:52]
+INFO: [Synth 8-4471] merging register 'u_ap_user_top/u_fir/inreg_reg[19:0]' into 'u_ap_user_top/u_fir/inreg_reg[19:0]' [C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_user/fir/fir_trn.vhd:52]
+INFO: [Synth 8-4471] merging register 'u_ap_user_top/u_fir/inreg_reg[19:0]' into 'u_ap_user_top/u_fir/inreg_reg[19:0]' [C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_user/fir/fir_trn.vhd:52]
+INFO: [Synth 8-4471] merging register 'u_ap_user_top/u_fir/inreg_reg[19:0]' into 'u_ap_user_top/u_fir/inreg_reg[19:0]' [C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_user/fir/fir_trn.vhd:52]
+INFO: [Synth 8-4471] merging register 'u_ap_user_top/u_fir/inreg_reg[19:0]' into 'u_ap_user_top/u_fir/inreg_reg[19:0]' [C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_user/fir/fir_trn.vhd:52]
+INFO: [Synth 8-4471] merging register 'u_ap_user_top/u_fir/inreg_reg[19:0]' into 'u_ap_user_top/u_fir/inreg_reg[19:0]' [C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_user/fir/fir_trn.vhd:52]
+INFO: [Synth 8-4471] merging register 'u_ap_user_top/u_fir/inreg_reg[19:0]' into 'u_ap_user_top/u_fir/inreg_reg[19:0]' [C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_user/fir/fir_trn.vhd:52]
+INFO: [Synth 8-4471] merging register 'u_ap_user_top/u_fir/inreg_reg[19:0]' into 'u_ap_user_top/u_fir/inreg_reg[19:0]' [C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_user/fir/fir_trn.vhd:52]
+DSP Report: Generating DSP u_ap_user_top/u_fir/stage_reg[8], operation Mode is: (A2*(B:0x3fd71))'.
+DSP Report: register u_ap_user_top/u_fir/stage_reg[8] is absorbed into DSP u_ap_user_top/u_fir/stage_reg[8].
+DSP Report: register u_ap_user_top/u_fir/stage_reg[8] is absorbed into DSP u_ap_user_top/u_fir/stage_reg[8].
+DSP Report: operator u_ap_user_top/u_fir/stage_reg[8]0 is absorbed into DSP u_ap_user_top/u_fir/stage_reg[8].
+DSP Report: Generating DSP u_ap_user_top/u_fir/stage_reg[7], operation Mode is: PCIN+A2*(B:0x3f99a).
+DSP Report: register u_ap_user_top/u_fir/stage_reg[7] is absorbed into DSP u_ap_user_top/u_fir/stage_reg[7].
+DSP Report: register u_ap_user_top/u_fir/stage_reg[7] is absorbed into DSP u_ap_user_top/u_fir/stage_reg[7].
+DSP Report: operator u_ap_user_top/u_fir/stage_reg[7]0 is absorbed into DSP u_ap_user_top/u_fir/stage_reg[7].
+DSP Report: operator u_ap_user_top/u_fir/stage_reg[7]1 is absorbed into DSP u_ap_user_top/u_fir/stage_reg[7].
+DSP Report: Generating DSP u_ap_user_top/u_fir/stage_reg[6], operation Mode is: PCIN+A2*(B:0x3f47b).
+DSP Report: register u_ap_user_top/u_fir/stage_reg[6] is absorbed into DSP u_ap_user_top/u_fir/stage_reg[6].
+DSP Report: register u_ap_user_top/u_fir/stage_reg[6] is absorbed into DSP u_ap_user_top/u_fir/stage_reg[6].
+DSP Report: operator u_ap_user_top/u_fir/stage_reg[6]0 is absorbed into DSP u_ap_user_top/u_fir/stage_reg[6].
+DSP Report: operator u_ap_user_top/u_fir/stage_reg[6]1 is absorbed into DSP u_ap_user_top/u_fir/stage_reg[6].
+DSP Report: Generating DSP u_ap_user_top/u_fir/stage_reg[5], operation Mode is: PCIN+A2*(B:0x3eb85).
+DSP Report: register u_ap_user_top/u_fir/stage_reg[5] is absorbed into DSP u_ap_user_top/u_fir/stage_reg[5].
+DSP Report: register u_ap_user_top/u_fir/stage_reg[5] is absorbed into DSP u_ap_user_top/u_fir/stage_reg[5].
+DSP Report: operator u_ap_user_top/u_fir/stage_reg[5]0 is absorbed into DSP u_ap_user_top/u_fir/stage_reg[5].
+DSP Report: operator u_ap_user_top/u_fir/stage_reg[5]1 is absorbed into DSP u_ap_user_top/u_fir/stage_reg[5].
+DSP Report: Generating DSP u_ap_user_top/u_fir/stage_reg[4], operation Mode is: PCIN+A2*(B:0x51ec).
+DSP Report: register u_ap_user_top/u_fir/stage_reg[4] is absorbed into DSP u_ap_user_top/u_fir/stage_reg[4].
+DSP Report: register u_ap_user_top/u_fir/stage_reg[4] is absorbed into DSP u_ap_user_top/u_fir/stage_reg[4].
+DSP Report: operator u_ap_user_top/u_fir/stage_reg[4]0 is absorbed into DSP u_ap_user_top/u_fir/stage_reg[4].
+DSP Report: operator u_ap_user_top/u_fir/stage_reg[4]1 is absorbed into DSP u_ap_user_top/u_fir/stage_reg[4].
+DSP Report: Generating DSP u_ap_user_top/u_fir/stage_reg[3], operation Mode is: PCIN+A2*(B:0x3eb85).
+DSP Report: register u_ap_user_top/u_fir/stage_reg[3] is absorbed into DSP u_ap_user_top/u_fir/stage_reg[3].
+DSP Report: register u_ap_user_top/u_fir/stage_reg[3] is absorbed into DSP u_ap_user_top/u_fir/stage_reg[3].
+DSP Report: operator u_ap_user_top/u_fir/stage_reg[3]0 is absorbed into DSP u_ap_user_top/u_fir/stage_reg[3].
+DSP Report: operator u_ap_user_top/u_fir/stage_reg[5]1 is absorbed into DSP u_ap_user_top/u_fir/stage_reg[3].
+DSP Report: Generating DSP u_ap_user_top/u_fir/stage_reg[2], operation Mode is: PCIN+A2*(B:0x3f47b).
+DSP Report: register u_ap_user_top/u_fir/stage_reg[2] is absorbed into DSP u_ap_user_top/u_fir/stage_reg[2].
+DSP Report: register u_ap_user_top/u_fir/stage_reg[2] is absorbed into DSP u_ap_user_top/u_fir/stage_reg[2].
+DSP Report: operator u_ap_user_top/u_fir/stage_reg[2]0 is absorbed into DSP u_ap_user_top/u_fir/stage_reg[2].
+DSP Report: operator u_ap_user_top/u_fir/stage_reg[6]1 is absorbed into DSP u_ap_user_top/u_fir/stage_reg[2].
+DSP Report: Generating DSP u_ap_user_top/u_fir/stage_reg[1], operation Mode is: PCIN+A2*(B:0x3f99a).
+DSP Report: register u_ap_user_top/u_fir/stage_reg[1] is absorbed into DSP u_ap_user_top/u_fir/stage_reg[1].
+DSP Report: register u_ap_user_top/u_fir/stage_reg[1] is absorbed into DSP u_ap_user_top/u_fir/stage_reg[1].
+DSP Report: operator u_ap_user_top/u_fir/stage_reg[1]0 is absorbed into DSP u_ap_user_top/u_fir/stage_reg[1].
+DSP Report: operator u_ap_user_top/u_fir/stage_reg[7]1 is absorbed into DSP u_ap_user_top/u_fir/stage_reg[1].
+DSP Report: Generating DSP u_ap_user_top/u_fir/stage_reg[0], operation Mode is: PCIN+A2*(B:0x3fd71).
+DSP Report: register u_ap_user_top/u_fir/stage_reg[0] is absorbed into DSP u_ap_user_top/u_fir/stage_reg[0].
+DSP Report: register u_ap_user_top/u_fir/stage_reg[0] is absorbed into DSP u_ap_user_top/u_fir/stage_reg[0].
+DSP Report: operator u_ap_user_top/u_fir/stage_reg[0]0 is absorbed into DSP u_ap_user_top/u_fir/stage_reg[0].
+DSP Report: operator u_ap_user_top/u_fir/stage_reg[8]0 is absorbed into DSP u_ap_user_top/u_fir/stage_reg[0].
+INFO: [Synth 8-3886] merging instance 'u_ap_codec_if/u_ac_i2c_if/u_ac_i2c_wrapper/reg_data_q_reg[5]' (FDCE) to 'u_ap_codec_if/u_ac_i2c_if/u_ac_i2c_wrapper/reg_data_q_reg[6]'
+INFO: [Synth 8-3886] merging instance 'u_ap_codec_if/u_ac_i2c_if/target_mode_q_reg[1]' (FDCE) to 'u_ap_codec_if/u_ac_i2c_if/init_idx_q_reg[1]'
+INFO: [Synth 8-3886] merging instance 'u_ap_codec_if/u_ac_i2c_if/target_mode_q_reg[0]' (FDPE) to 'u_ap_codec_if/u_ac_i2c_if/init_idx_q_reg[0]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_ap_codec_if/u_ac_i2c_if/active_dac_mute_q_reg )
+INFO: [Synth 8-3886] merging instance 'u_ap_codec_if/u_ac_i2c_if/u_ac_i2c_wrapper/i2c_addr_q_reg[5]' (FDCE) to 'u_ap_codec_if/u_ac_i2c_if/u_ac_i2c_wrapper/i2c_addr_q_reg[0]'
+INFO: [Synth 8-3886] merging instance 'u_ap_codec_if/u_ac_i2c_if/u_ac_i2c_wrapper/u_ac_i2c_master/addr_rw_reg[6]' (FDE) to 'u_ap_codec_if/u_ac_i2c_if/u_ac_i2c_wrapper/u_ac_i2c_master/addr_rw_reg[1]'
+INFO: [Synth 8-3886] merging instance 'u_ap_codec_if/u_ac_i2c_if/u_ac_i2c_wrapper/i2c_addr_q_reg[6]' (FDCE) to 'u_ap_codec_if/u_ac_i2c_if/u_ac_i2c_wrapper/i2c_addr_q_reg[0]'
+INFO: [Synth 8-3886] merging instance 'u_ap_codec_if/u_ac_i2c_if/u_ac_i2c_wrapper/u_ac_i2c_master/addr_rw_reg[7]' (FDE) to 'u_ap_codec_if/u_ac_i2c_if/u_ac_i2c_wrapper/u_ac_i2c_master/addr_rw_reg[1]'
+INFO: [Synth 8-3886] merging instance 'u_ap_codec_if/u_ac_i2c_if/u_ac_i2c_wrapper/i2c_addr_q_reg[0]' (FDCE) to 'u_ap_codec_if/u_ac_i2c_if/u_ac_i2c_wrapper/i2c_addr_q_reg[2]'
+INFO: [Synth 8-3886] merging instance 'u_ap_codec_if/u_ac_i2c_if/u_ac_i2c_wrapper/u_ac_i2c_master/addr_rw_reg[1]' (FDE) to 'u_ap_codec_if/u_ac_i2c_if/u_ac_i2c_wrapper/u_ac_i2c_master/addr_rw_reg[3]'
+INFO: [Synth 8-3886] merging instance 'u_ap_codec_if/u_ac_i2c_if/u_ac_i2c_wrapper/i2c_addr_q_reg[1]' (FDCE) to 'u_ap_codec_if/u_ac_i2c_if/u_ac_i2c_wrapper/i2c_addr_q_reg[3]'
+INFO: [Synth 8-3886] merging instance 'u_ap_codec_if/u_ac_i2c_if/u_ac_i2c_wrapper/u_ac_i2c_master/addr_rw_reg[2]' (FDE) to 'u_ap_codec_if/u_ac_i2c_if/u_ac_i2c_wrapper/u_ac_i2c_master/addr_rw_reg[4]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_ap_codec_if/u_ac_i2c_if/u_ac_i2c_wrapper/i2c_addr_q_reg[2] )
+INFO: [Synth 8-3886] merging instance 'u_ap_codec_if/u_ac_i2c_if/u_ac_i2c_wrapper/i2c_addr_q_reg[3]' (FDCE) to 'u_ap_codec_if/u_ac_i2c_if/u_ac_i2c_wrapper/i2c_addr_q_reg[4]'
+INFO: [Synth 8-3886] merging instance 'u_ap_codec_if/u_ac_i2c_if/u_ac_i2c_wrapper/u_ac_i2c_master/addr_rw_reg[4]' (FDE) to 'u_ap_codec_if/u_ac_i2c_if/u_ac_i2c_wrapper/u_ac_i2c_master/addr_rw_reg[5]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_ap_codec_if/u_ac_i2c_if/init_idx_q_reg[1] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\u_ap_codec_if/u_ac_i2c_if/init_idx_q_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_ap_codec_if/u_ac_i2c_if/read_error_q_reg )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_ap_codec_if/u_ac_i2c_if/verify_error_q_reg )
+INFO: [Synth 8-3886] merging instance 'u_ap_codec_if/u_ac_i2c_if/u_ac_i2c_wrapper/i2c_data_wr_q_reg[6]' (FDCE) to 'u_ap_codec_if/u_ac_i2c_if/u_ac_i2c_wrapper/i2c_data_wr_q_reg[5]'
+INFO: [Synth 8-3886] merging instance 'u_ap_codec_if/u_ac_i2c_if/u_ac_i2c_wrapper/u_ac_i2c_master/data_tx_reg[7]' (FDE) to 'u_ap_codec_if/u_ac_i2c_if/u_ac_i2c_wrapper/u_ac_i2c_master/addr_rw_reg[3]'
+INFO: [Synth 8-3886] merging instance 'u_ap_codec_if/u_ac_i2c_if/u_ac_i2c_wrapper/u_ac_i2c_master/data_tx_reg[6]' (FDE) to 'u_ap_codec_if/u_ac_i2c_if/u_ac_i2c_wrapper/u_ac_i2c_master/data_tx_reg[5]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_ap_codec_if/u_ac_i2c_if/u_ac_i2c_wrapper/u_ac_i2c_master/addr_rw_reg[3] )
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 746.449 ; gain = 446.578
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+DSP: Preliminary Mapping	Report (see note below)
++-------------+---------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name  | DSP Mapping         | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++-------------+---------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|zybo_ps1_top | (A2*(B:0x3fd71))'   | 20     | 11     | -      | -      | 31     | 1    | 0    | -    | -    | -     | 1    | 0    | 
+|zybo_ps1_top | PCIN+A2*(B:0x3f99a) | 20     | 12     | -      | -      | 36     | 1    | 0    | -    | -    | -     | 0    | 1    | 
+|zybo_ps1_top | PCIN+A2*(B:0x3f47b) | 20     | 13     | -      | -      | 36     | 1    | 0    | -    | -    | -     | 0    | 1    | 
+|zybo_ps1_top | PCIN+A2*(B:0x3eb85) | 20     | 14     | -      | -      | 36     | 1    | 0    | -    | -    | -     | 0    | 1    | 
+|zybo_ps1_top | PCIN+A2*(B:0x51ec)  | 20     | 16     | -      | -      | 36     | 1    | 0    | -    | -    | -     | 0    | 1    | 
+|zybo_ps1_top | PCIN+A2*(B:0x3eb85) | 20     | 14     | -      | -      | 36     | 1    | 0    | -    | -    | -     | 0    | 1    | 
+|zybo_ps1_top | PCIN+A2*(B:0x3f47b) | 20     | 13     | -      | -      | 36     | 1    | 0    | -    | -    | -     | 0    | 1    | 
+|zybo_ps1_top | PCIN+A2*(B:0x3f99a) | 20     | 12     | -      | -      | 36     | 1    | 0    | -    | -    | -     | 0    | 1    | 
+|zybo_ps1_top | PCIN+A2*(B:0x3fd71) | 20     | 11     | -      | -      | 36     | 1    | 0    | -    | -    | -     | 0    | 1    | 
++-------------+---------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 750.766 ; gain = 450.895
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_codec/ac_i2s_if.vhd:70]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_codec/ac_i2s_if.vhd:70]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_codec/ac_i2s_if.vhd:70]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_codec/ac_i2s_if.vhd:70]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_codec/ac_i2s_if.vhd:70]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_codec/ac_i2s_if.vhd:70]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_codec/ac_i2s_if.vhd:70]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_codec/ac_i2s_if.vhd:70]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_codec/ac_i2s_if.vhd:70]
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 750.984 ; gain = 451.113
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6064] Net \adc_smpl_regs_reg[r] [15] is driving 135 big block pins (URAM, BRAM and DSP loads). Created 14 replicas of its driver. 
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 750.984 ; gain = 451.113
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 750.984 ; gain = 451.113
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 750.984 ; gain = 451.113
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 750.984 ; gain = 451.113
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 750.984 ; gain = 451.113
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 750.984 ; gain = 451.113
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+------------+------+
+|      |Cell        |Count |
++------+------------+------+
+|1     |BUFG        |     5|
+|2     |CARRY4      |    19|
+|3     |DSP48E1     |     9|
+|4     |LUT1        |     5|
+|5     |LUT2        |    54|
+|6     |LUT3        |    23|
+|7     |LUT4        |    62|
+|8     |LUT5        |    84|
+|9     |LUT6        |   107|
+|10    |MMCME2_BASE |     2|
+|11    |FDCE        |   231|
+|12    |FDPE        |    14|
+|13    |FDRE        |   116|
+|14    |FDSE        |     1|
+|15    |IBUF        |     6|
+|16    |IOBUF       |     2|
+|17    |OBUF        |    13|
++------+------------+------+
+
+Report Instance Areas: 
++------+------------------------+---------------+------+
+|      |Instance                |Module         |Cells |
++------+------------------------+---------------+------+
+|1     |top                     |               |   753|
+|2     |  u_ap_codec_if         |ap_codec_if    |   509|
+|3     |    u_ac_i2c_if         |ac_i2c_if      |   286|
+|4     |      u_ac_i2c_wrapper  |ac_i2c_wrapper |   192|
+|5     |        u_ac_i2c_master |ac_i2c_master  |   130|
+|6     |    u_ac_i2s_if         |ac_i2s_if      |   223|
+|7     |  u_ap_user_top         |ap_user_top    |   205|
+|8     |    u_fir               |fir_trn        |   103|
+|9     |  u_clk_rst             |clk_rst_gen    |    18|
+|10    |    u_clk_gen           |clk_gen        |    10|
+|11    |    u_rst_gen           |rst_gen        |     8|
++------+------------------------+---------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 750.984 ; gain = 451.113
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 750.984 ; gain = 451.113
+Synthesis Optimization Complete : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 750.984 ; gain = 451.113
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 762.918 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 32 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 859.879 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 4 instances were transformed.
+  IOBUF => IOBUF (IBUF, OBUFT): 2 instances
+  MMCME2_BASE => MMCME2_ADV: 2 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+86 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:26 ; elapsed = 00:00:30 . Memory (MB): peak = 859.879 ; gain = 560.008
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 859.879 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'C:/git/DIDE/dide_fs26/zybo_ps1/vivado/zybo_ps1.runs/synth_1/zybo_ps1_top.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file zybo_ps1_top_utilization_synth.rpt -pb zybo_ps1_top_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Thu Mar 19 15:57:39 2026...
