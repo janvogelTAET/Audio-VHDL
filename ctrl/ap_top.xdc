@@ -128,4 +128,35 @@ set SmplCEcells [get_cells -of [filter [all_fanout -flat -endpoints [get_pins u_
 set_multicycle_path -from $SmplCEcells -to $SmplCEcells -setup $SMPL_ENB_RATE
 set_multicycle_path -from $SmplCEcells -to $SmplCEcells -hold [expr $SMPL_ENB_RATE-1]
 
+################################################################
+# Semesterleistung PS1: Physical Constraints
+################################################################
 
+# 1. 7-Segment Anzeige Segmente (Aus Übung 9)
+set_property -dict { PACKAGE_PIN V15   IOSTANDARD LVCMOS33 } [get_ports { seg_po[0] }]
+set_property -dict { PACKAGE_PIN Y14   IOSTANDARD LVCMOS33 } [get_ports { seg_po[1] }]
+set_property -dict { PACKAGE_PIN W15   IOSTANDARD LVCMOS33 } [get_ports { seg_po[2] }]
+set_property -dict { PACKAGE_PIN T12   IOSTANDARD LVCMOS33 } [get_ports { seg_po[3] }]
+set_property -dict { PACKAGE_PIN T11   IOSTANDARD LVCMOS33 } [get_ports { seg_po[4] }]
+set_property -dict { PACKAGE_PIN U12   IOSTANDARD LVCMOS33 } [get_ports { seg_po[5] }]
+set_property -dict { PACKAGE_PIN T10   IOSTANDARD LVCMOS33 } [get_ports { seg_po[6] }]
+
+# 2. Buttons (Zybo Z7 Onboard Buttons: BTN1 & BTN2)
+set_property -dict { PACKAGE_PIN P16   IOSTANDARD LVCMOS33 } [get_ports { btn_pi[1] }]
+set_property -dict { PACKAGE_PIN V16   IOSTANDARD LVCMOS33 } [get_ports { btn_pi[2] }]
+
+# 3. Drehgeber / Rotary Encoder (Aus Übung 6)
+set_property -dict { PACKAGE_PIN U20   IOSTANDARD LVCMOS33 } [get_ports { rot_a_pi }]
+set_property -dict { PACKAGE_PIN Y19   IOSTANDARD LVCMOS33 } [get_ports { rot_b_pi }]
+set_property PULLUP TRUE [get_ports { rot_a_pi }]
+set_property PULLUP TRUE [get_ports { rot_b_pi }]
+
+# ==============================================================
+# 4. Anoden für 7-Segment (Multiplexing)
+# W14 ist sehr wahrscheinlich, da es der letzte freie Pin im 
+# Display-Stecker ist. Für an_po[1] ist V12 vorerst ein Platzhalter.
+# Falls auf dem Board nur eine Ziffer leuchtet, musst du für 
+# an_po[1] den Pin noch im Shield-Handbuch (oder einer anderen Übung) nachschlagen.
+# ==============================================================
+set_property -dict { PACKAGE_PIN W14   IOSTANDARD LVCMOS33 } [get_ports { an_po[0] }]
+set_property -dict { PACKAGE_PIN V12   IOSTANDARD LVCMOS33 } [get_ports { an_po[1] }]

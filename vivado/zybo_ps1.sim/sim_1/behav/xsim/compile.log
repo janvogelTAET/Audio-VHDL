@@ -1,0 +1,41 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/pkg/ac_ssm2603_pkg.vhd" into library work
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/pkg/ap_design_pkg.vhd" into library work
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_codec/ac_i2c_master.vhd" into library work
+INFO: [VRFC 10-3107] analyzing entity 'ac_i2c_master'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_codec/ac_i2c_wrapper.vhd" into library work
+INFO: [VRFC 10-3107] analyzing entity 'ac_i2c_wrapper'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_codec/ac_i2c_if.vhd" into library work
+INFO: [VRFC 10-3107] analyzing entity 'ac_i2c_if'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_codec/ac_i2s_if.vhd" into library work
+INFO: [VRFC 10-3107] analyzing entity 'ac_i2s_if'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_codec/ap_codec_if.vhd" into library work
+INFO: [VRFC 10-3107] analyzing entity 'ap_codec_if'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/pkg/ap_fir_pkg.vhd" into library work
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_user/fir/fir_trn.vhd" into library work
+INFO: [VRFC 10-3107] analyzing entity 'fir_trn'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_user/fir/fir_sel.vhd" into library work
+INFO: [VRFC 10-3107] analyzing entity 'fir_sel'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_user/audio/tone_gen.vhd" into library work
+INFO: [VRFC 10-3107] analyzing entity 'tone_gen'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_user/audio/audio_ram.vhd" into library work
+INFO: [VRFC 10-3107] analyzing entity 'audio_ram'
+WARNING: [VRFC 10-2115] shared variables must be of a protected type [C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_user/audio/audio_ram.vhd:28]
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_user/seg/enc_decoder.vhd" into library work
+INFO: [VRFC 10-3107] analyzing entity 'enc_decoder'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_user/seg/seg7_driver.vhd" into library work
+INFO: [VRFC 10-3107] analyzing entity 'seg7_driver'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_user/ap_user_top.vhd" into library work
+INFO: [VRFC 10-3107] analyzing entity 'ap_user_top'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_clk_rst/clk_gen.vhd" into library work
+INFO: [VRFC 10-3107] analyzing entity 'clk_gen'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_clk_rst/rst_gen.vhd" into library work
+INFO: [VRFC 10-3107] analyzing entity 'rst_gen'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_clk_rst/clk_rst_gen.vhd" into library work
+INFO: [VRFC 10-3107] analyzing entity 'clk_rst_gen'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/zybo_ps1_top.vhd" into library work
+INFO: [VRFC 10-3107] analyzing entity 'zybo_ps1_top'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/tb/tb_zybo_ps1_top.vhd" into library work
+INFO: [VRFC 10-3107] analyzing entity 'tb_zybo_ps1_top'
+ERROR: [VRFC 10-3353] formal port 'btn_pi' has no actual or default value [C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/tb/tb_zybo_ps1_top.vhd:57]
+ERROR: [VRFC 10-3782] unit 'tb' ignored due to previous errors [C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/tb/tb_zybo_ps1_top.vhd:21]
+INFO: [VRFC 10-3070] VHDL file 'C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/tb/tb_zybo_ps1_top.vhd' ignored due to errors

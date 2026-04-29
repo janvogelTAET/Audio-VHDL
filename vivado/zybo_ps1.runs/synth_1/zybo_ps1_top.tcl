@@ -17,6 +17,7 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
+set_param xicom.use_bs_reader 1
 create_project -in_memory -part xc7z010clg400-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -28,7 +29,6 @@ set_property default_lib work [current_project]
 set_property target_language VHDL [current_project]
 set_property ip_output_repo c:/git/DIDE/dide_fs26/zybo_ps1/vivado/zybo_ps1.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
-read_vhdl -library work C:/git/DIDE/dide_fs26/zybo_ps1/vivado/zybo_ps1.srcs/sources_1/imports/audio/ton_gen.vhd
 read_vhdl -vhdl2008 -library work {
   C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/pkg/ac_ssm2603_pkg.vhd
   C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/pkg/ap_design_pkg.vhd
@@ -40,6 +40,7 @@ read_vhdl -vhdl2008 -library work {
   C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/pkg/ap_fir_pkg.vhd
   C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_user/fir/fir_trn.vhd
   C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_user/fir/fir_sel.vhd
+  C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_user/audio/tone_gen.vhd
   C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_user/audio/audio_ram.vhd
   C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_user/seg/enc_decoder.vhd
   C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_user/seg/seg7_driver.vhd
