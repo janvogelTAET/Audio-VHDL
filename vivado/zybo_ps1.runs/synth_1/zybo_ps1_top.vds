@@ -2,8 +2,8 @@
 # Vivado v2019.2 (64-bit)
 # SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
 # IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
-# Start of session at: Tue Apr 28 21:54:14 2026
-# Process ID: 10628
+# Start of session at: Wed Apr 29 16:14:10 2026
+# Process ID: 26688
 # Current directory: C:/git/DIDE/dide_fs26/zybo_ps1/vivado/zybo_ps1.runs/synth_1
 # Command line: vivado.exe -log zybo_ps1_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source zybo_ps1_top.tcl
 # Log file: C:/git/DIDE/dide_fs26/zybo_ps1/vivado/zybo_ps1.runs/synth_1/zybo_ps1_top.vds
@@ -16,11 +16,10 @@ Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
 INFO: [Device 21-403] Loading part xc7z010clg400-1
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 17456 
+INFO: Helper process launched with PID 19900 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:11 ; elapsed = 00:00:15 . Memory (MB): peak = 779.840 ; gain = 235.195
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 780.133 ; gain = 234.691
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-4747] shared variables must be of a protected type [C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_user/audio/audio_ram.vhd:28]
 INFO: [Synth 8-638] synthesizing module 'zybo_ps1_top' [C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/zybo_ps1_top.vhd:44]
 INFO: [Synth 8-638] synthesizing module 'clk_rst_gen' [C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_clk_rst/clk_rst_gen.vhd:28]
 INFO: [Synth 8-638] synthesizing module 'clk_gen' [C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_clk_rst/clk_gen.vhd:34]
@@ -138,23 +137,28 @@ WARNING: [Synth 8-5825] expecting unsigned expression [C:/git/DIDE/dide_fs26/zyb
 WARNING: [Synth 8-5825] expecting unsigned expression [C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_user/audio/tone_gen.vhd:75]
 INFO: [Synth 8-256] done synthesizing module 'tone_gen' (11#1) [C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_user/audio/tone_gen.vhd:37]
 INFO: [Synth 8-638] synthesizing module 'audio_ram' [C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_user/audio/audio_ram.vhd:23]
-INFO: [Synth 8-5534] Detected attribute (* ram_style = "block" *) [C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_user/audio/audio_ram.vhd:28]
+INFO: [Synth 8-5534] Detected attribute (* ram_style = "block" *) [C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_user/audio/audio_ram.vhd:26]
 INFO: [Synth 8-256] done synthesizing module 'audio_ram' (12#1) [C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_user/audio/audio_ram.vhd:23]
-INFO: [Synth 8-638] synthesizing module 'enc_decoder' [C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_user/seg/enc_decoder.vhd:24]
-INFO: [Synth 8-256] done synthesizing module 'enc_decoder' (13#1) [C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_user/seg/enc_decoder.vhd:24]
-INFO: [Synth 8-638] synthesizing module 'seg7_driver' [C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_user/seg/seg7_driver.vhd:34]
-	Parameter G_DIV_LOG2 bound to: 16 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'seg7_driver' (14#1) [C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_user/seg/seg7_driver.vhd:34]
-WARNING: [Synth 8-6014] Unused sequential element v_prod_reg was removed.  [C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_user/ap_user_top.vhd:135]
-WARNING: [Synth 8-6014] Unused sequential element v_add_reg was removed.  [C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_user/ap_user_top.vhd:136]
-WARNING: [Synth 8-6014] Unused sequential element v_sat_rnd_reg was removed.  [C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_user/ap_user_top.vhd:139]
-WARNING: [Synth 8-6014] Unused sequential element s1_reg_reg was removed.  [C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_user/ap_user_top.vhd:131]
-WARNING: [Synth 8-6014] Unused sequential element s2_reg_reg was removed.  [C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_user/ap_user_top.vhd:132]
-WARNING: [Synth 8-6014] Unused sequential element iir_out_reg_reg was removed.  [C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_user/ap_user_top.vhd:130]
+INFO: [Synth 8-638] synthesizing module 'seg7_driver' [C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_user/seg/seg7_driver.vhd:20]
+INFO: [Synth 8-256] done synthesizing module 'seg7_driver' (13#1) [C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_user/seg/seg7_driver.vhd:20]
+INFO: [Synth 8-638] synthesizing module 'rotary_encoder_ctrl' [C:/git/DIDE/dide_fs26/zybo_ps1/vivado/zybo_ps1.srcs/sources_1/imports/seg/rotary_encoder_ctrl.vh.vhd:18]
+INFO: [Synth 8-256] done synthesizing module 'rotary_encoder_ctrl' (14#1) [C:/git/DIDE/dide_fs26/zybo_ps1/vivado/zybo_ps1.srcs/sources_1/imports/seg/rotary_encoder_ctrl.vh.vhd:18]
+WARNING: [Synth 8-6014] Unused sequential element v_prod_reg was removed.  [C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_user/ap_user_top.vhd:133]
+WARNING: [Synth 8-6014] Unused sequential element v_add_reg was removed.  [C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_user/ap_user_top.vhd:134]
+WARNING: [Synth 8-6014] Unused sequential element v_sat_rnd_reg was removed.  [C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_user/ap_user_top.vhd:136]
+WARNING: [Synth 8-6014] Unused sequential element s1_reg_reg was removed.  [C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_user/ap_user_top.vhd:129]
+WARNING: [Synth 8-6014] Unused sequential element s2_reg_reg was removed.  [C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_user/ap_user_top.vhd:130]
+WARNING: [Synth 8-6014] Unused sequential element iir_out_reg_reg was removed.  [C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_user/ap_user_top.vhd:128]
 INFO: [Synth 8-256] done synthesizing module 'ap_user_top' (15#1) [C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_user/ap_user_top.vhd:36]
 INFO: [Synth 8-256] done synthesizing module 'zybo_ps1_top' (16#1) [C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/zybo_ps1_top.vhd:44]
+WARNING: [Synth 8-3331] design seg7_driver has unconnected port clk_pi
+WARNING: [Synth 8-3331] design seg7_driver has unconnected port rst_pi
+WARNING: [Synth 8-3331] design seg7_driver has unconnected port digit1_pi[3]
+WARNING: [Synth 8-3331] design seg7_driver has unconnected port digit1_pi[2]
+WARNING: [Synth 8-3331] design seg7_driver has unconnected port digit1_pi[1]
+WARNING: [Synth 8-3331] design seg7_driver has unconnected port digit1_pi[0]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:17 ; elapsed = 00:00:21 . Memory (MB): peak = 866.102 ; gain = 321.457
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 887.051 ; gain = 341.609
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -167,12 +171,12 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:18 ; elapsed = 00:00:24 . Memory (MB): peak = 866.102 ; gain = 321.457
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 887.051 ; gain = 341.609
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:18 ; elapsed = 00:00:24 . Memory (MB): peak = 866.102 ; gain = 321.457
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 887.051 ; gain = 341.609
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.099 . Memory (MB): peak = 866.102 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.049 . Memory (MB): peak = 887.051 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 2 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -180,41 +184,55 @@ INFO: [Project 1-570] Preparing netlist for logic optimization
 Processing XDC Constraints
 Initializing timing engine
 Parsing XDC File [C:/git/DIDE/dide_fs26/zybo_ps1/ctrl/ap_top.xdc]
-INFO: [Timing 38-2] Deriving generated clocks [C:/git/DIDE/dide_fs26/zybo_ps1/ctrl/ap_top.xdc:126]
-WARNING: [Designutils 20-1567] Use of 'set_multicycle_path' with '-hold' is not supported by synthesis. The constraint will not be passed to synthesis. [C:/git/DIDE/dide_fs26/zybo_ps1/ctrl/ap_top.xdc:129]
+WARNING: [Vivado 12-584] No ports matched 'led8_po[3]'. [C:/git/DIDE/dide_fs26/zybo_ps1/ctrl/ap_top.xdc:33]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/git/DIDE/dide_fs26/zybo_ps1/ctrl/ap_top.xdc:33]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led8_po[4]'. [C:/git/DIDE/dide_fs26/zybo_ps1/ctrl/ap_top.xdc:34]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/git/DIDE/dide_fs26/zybo_ps1/ctrl/ap_top.xdc:34]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led8_po[5]'. [C:/git/DIDE/dide_fs26/zybo_ps1/ctrl/ap_top.xdc:35]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/git/DIDE/dide_fs26/zybo_ps1/ctrl/ap_top.xdc:35]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led8_po[6]'. [C:/git/DIDE/dide_fs26/zybo_ps1/ctrl/ap_top.xdc:36]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/git/DIDE/dide_fs26/zybo_ps1/ctrl/ap_top.xdc:36]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led8_po[7]'. [C:/git/DIDE/dide_fs26/zybo_ps1/ctrl/ap_top.xdc:37]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/git/DIDE/dide_fs26/zybo_ps1/ctrl/ap_top.xdc:37]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+INFO: [Timing 38-2] Deriving generated clocks [C:/git/DIDE/dide_fs26/zybo_ps1/ctrl/ap_top.xdc:112]
+WARNING: [Designutils 20-1567] Use of 'set_multicycle_path' with '-hold' is not supported by synthesis. The constraint will not be passed to synthesis. [C:/git/DIDE/dide_fs26/zybo_ps1/ctrl/ap_top.xdc:115]
 Finished Parsing XDC File [C:/git/DIDE/dide_fs26/zybo_ps1/ctrl/ap_top.xdc]
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/git/DIDE/dide_fs26/zybo_ps1/ctrl/ap_top.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/zybo_ps1_top_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/zybo_ps1_top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 971.195 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 985.238 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 2 instances were transformed.
   MMCME2_BASE => MMCME2_ADV: 2 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.086 . Memory (MB): peak = 971.195 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.025 . Memory (MB): peak = 985.238 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:40 ; elapsed = 00:00:50 . Memory (MB): peak = 971.195 ; gain = 426.551
+Finished Constraint Validation : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 985.238 ; gain = 439.797
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z010clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:40 ; elapsed = 00:00:50 . Memory (MB): peak = 971.195 ; gain = 426.551
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 985.238 ; gain = 439.797
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property ASYNC_REG = true for u_ap_codec_if/u_ac_i2s_if/sync_regs_reg. (constraint file  C:/git/DIDE/dide_fs26/zybo_ps1/ctrl/ap_top.xdc, line 76).
+Applied set_property ASYNC_REG = true for u_ap_codec_if/u_ac_i2s_if/sync_regs_reg. (constraint file  C:/git/DIDE/dide_fs26/zybo_ps1/ctrl/ap_top.xdc, line 87).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:41 ; elapsed = 00:00:51 . Memory (MB): peak = 971.195 ; gain = 426.551
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 985.238 ; gain = 439.797
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'ac_i2c_master'
 INFO: [Synth 8-802] inferred FSM for state register 'state_q_reg' in module 'ac_i2c_wrapper'
 INFO: [Synth 8-802] inferred FSM for state register 'state_q_reg' in module 'ac_i2c_if'
 INFO: [Synth 8-5544] ROM "verify_error_d" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/git/DIDE/dide_fs26/zybo_ps1/vhdl/ap_user/ap_user_top.vhd:157]
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -262,7 +280,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'state_q_reg' using encodin
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_q_reg' using encoding 'one-hot' in module 'ac_i2c_if'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:45 ; elapsed = 00:00:56 . Memory (MB): peak = 971.195 ; gain = 426.551
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 985.238 ; gain = 439.797
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -277,26 +295,30 @@ Detailed RTL Component Info :
 +---Adders : 
 	   2 Input     26 Bit       Adders := 1     
 	   2 Input     25 Bit       Adders := 4     
+	   2 Input     17 Bit       Adders := 1     
 	   2 Input      8 Bit       Adders := 2     
-	   2 Input      4 Bit       Adders := 3     
+	   2 Input      4 Bit       Adders := 2     
 	   2 Input      3 Bit       Adders := 1     
+	   2 Input      2 Bit       Adders := 1     
 +---Registers : 
 	               26 Bit    Registers := 1     
 	               20 Bit    Registers := 36    
+	               17 Bit    Registers := 1     
 	               16 Bit    Registers := 16    
 	                9 Bit    Registers := 2     
 	                8 Bit    Registers := 9     
 	                7 Bit    Registers := 3     
-	                4 Bit    Registers := 3     
-	                3 Bit    Registers := 5     
-	                2 Bit    Registers := 3     
-	                1 Bit    Registers := 30    
+	                4 Bit    Registers := 2     
+	                3 Bit    Registers := 3     
+	                2 Bit    Registers := 6     
+	                1 Bit    Registers := 27    
 +---RAMs : 
 	            1024K Bit         RAMs := 1     
 +---Muxes : 
 	   2 Input     26 Bit        Muxes := 2     
 	  10 Input     26 Bit        Muxes := 1     
 	   2 Input     25 Bit        Muxes := 12    
+	   2 Input     17 Bit        Muxes := 1     
 	   3 Input     16 Bit        Muxes := 7     
 	   2 Input     16 Bit        Muxes := 7     
 	   4 Input     12 Bit        Muxes := 1     
@@ -313,7 +335,6 @@ Detailed RTL Component Info :
 	  12 Input      8 Bit        Muxes := 1     
 	   4 Input      8 Bit        Muxes := 1     
 	   4 Input      7 Bit        Muxes := 1     
-	  32 Input      7 Bit        Muxes := 1     
 	   4 Input      5 Bit        Muxes := 1     
 	  12 Input      4 Bit        Muxes := 1     
 	   2 Input      4 Bit        Muxes := 2     
@@ -451,28 +472,25 @@ Detailed RTL Component Info :
 	            1024K Bit         RAMs := 1     
 +---Muxes : 
 	   2 Input      1 Bit        Muxes := 12    
-Module enc_decoder 
-Detailed RTL Component Info : 
-+---Registers : 
-	                3 Bit    Registers := 2     
-	                1 Bit    Registers := 3     
-Module seg7_driver 
-Detailed RTL Component Info : 
-+---Registers : 
-	                1 Bit    Registers := 1     
-+---Muxes : 
-	  32 Input      7 Bit        Muxes := 1     
-	   2 Input      2 Bit        Muxes := 1     
-Module ap_user_top 
+Module rotary_encoder_ctrl 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input      4 Bit       Adders := 1     
+	   2 Input     17 Bit       Adders := 1     
+	   2 Input      2 Bit       Adders := 1     
++---Registers : 
+	               17 Bit    Registers := 1     
+	                2 Bit    Registers := 3     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     17 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module ap_user_top 
+Detailed RTL Component Info : 
 +---Registers : 
 	               16 Bit    Registers := 4     
-	                4 Bit    Registers := 1     
 +---Muxes : 
 	   2 Input     16 Bit        Muxes := 5     
-	   2 Input      1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
@@ -723,7 +741,7 @@ INFO: [Synth 8-3886] merging instance 'u_ap_codec_if/u_ac_i2c_if/u_ac_i2c_wrappe
 INFO: [Synth 8-3886] merging instance 'u_ap_codec_if/u_ac_i2c_if/u_ac_i2c_wrapper/u_ac_i2c_master/data_tx_reg[6]' (FDE) to 'u_ap_codec_if/u_ac_i2c_if/u_ac_i2c_wrapper/u_ac_i2c_master/data_tx_reg[5]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_ap_codec_if/u_ac_i2c_if/u_ac_i2c_wrapper/u_ac_i2c_master/addr_rw_reg[3] )
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:05 ; elapsed = 00:01:19 . Memory (MB): peak = 971.195 ; gain = 426.551
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 985.238 ; gain = 439.797
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -803,13 +821,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:55 ; elapsed = 00:02:17 . Memory (MB): peak = 988.414 ; gain = 443.770
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:51 ; elapsed = 00:00:53 . Memory (MB): peak = 1001.422 ; gain = 455.980
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:01:57 ; elapsed = 00:02:19 . Memory (MB): peak = 997.102 ; gain = 452.457
+Finished Timing Optimization : Time (s): cpu = 00:00:51 ; elapsed = 00:00:54 . Memory (MB): peak = 1009.355 ; gain = 463.914
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -887,7 +905,7 @@ INFO: [Synth 8-7053] The timing for the instance u_ap_user_top/u_audio_ram/ram_r
 INFO: [Synth 8-7053] The timing for the instance u_ap_user_top/u_audio_ram/ram_reg_1_14 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7053] The timing for the instance u_ap_user_top/u_audio_ram/ram_reg_1_15 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:02:00 ; elapsed = 00:02:23 . Memory (MB): peak = 1034.125 ; gain = 489.480
+Finished Technology Mapping : Time (s): cpu = 00:00:53 ; elapsed = 00:00:56 . Memory (MB): peak = 1035.141 ; gain = 489.699
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -907,37 +925,35 @@ Finished Flattening Before IO Insertion
 ---------------------------------------------------------------------------------
 Start Final Netlist Cleanup
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6064] Net \adc_data[r] [15] is driving 135 big block pins (URAM, BRAM and DSP loads). Created 14 replicas of its driver. 
-INFO: [Synth 8-6064] Net \u_ap_codec_if/u_ac_i2s_if/adc_smpl_regs_reg[r][15]_rep_n_0  is driving 135 big block pins (URAM, BRAM and DSP loads). Created 14 replicas of its driver. 
-INFO: [Synth 8-6064] Net \u_ap_codec_if/u_ac_i2s_if/adc_smpl_regs_reg[l][15]_rep_n_0  is driving 135 big block pins (URAM, BRAM and DSP loads). Created 14 replicas of its driver. 
-INFO: [Synth 8-6064] Net \u_ap_codec_if/u_ac_i2s_if/adc_smpl_regs_reg[l][15]_rep__0_n_0  is driving 135 big block pins (URAM, BRAM and DSP loads). Created 14 replicas of its driver. 
-INFO: [Synth 8-6064] Net \u_ap_user_top/u_audio_ram/addr_cnt_reg[0]_rep_n_0  is driving 28 big block pins (URAM, BRAM and DSP loads). Created 3 replicas of its driver. 
-INFO: [Synth 8-6064] Net \u_ap_user_top/u_audio_ram/addr_cnt_reg [1] is driving 28 big block pins (URAM, BRAM and DSP loads). Created 3 replicas of its driver. 
-INFO: [Synth 8-6064] Net \u_ap_user_top/u_audio_ram/addr_cnt_reg[2]_rep_n_0  is driving 28 big block pins (URAM, BRAM and DSP loads). Created 3 replicas of its driver. 
-INFO: [Synth 8-6064] Net \u_ap_user_top/u_audio_ram/addr_cnt_reg [3] is driving 28 big block pins (URAM, BRAM and DSP loads). Created 3 replicas of its driver. 
+INFO: [Synth 8-6064] Net \adc_data[r] [15] is driving 270 big block pins (URAM, BRAM and DSP loads). Created 27 replicas of its driver. 
+INFO: [Synth 8-6064] Net \u_ap_codec_if/u_ac_i2s_if/adc_smpl_regs_reg[l][15]_rep__1_n_0  is driving 90 big block pins (URAM, BRAM and DSP loads). Created 9 replicas of its driver. 
+INFO: [Synth 8-6064] Net \u_ap_codec_if/u_ac_i2s_if/adc_smpl_regs_reg[l][15]_rep__0_n_0  is driving 89 big block pins (URAM, BRAM and DSP loads). Created 9 replicas of its driver. 
+INFO: [Synth 8-6064] Net \u_ap_codec_if/u_ac_i2s_if/adc_smpl_regs_reg[l][15]_rep_n_0  is driving 90 big block pins (URAM, BRAM and DSP loads). Created 9 replicas of its driver. 
+INFO: [Synth 8-6064] Net \u_ap_user_top/u_audio_ram/addr_cnt_reg [0] is driving 28 big block pins (URAM, BRAM and DSP loads). Created 3 replicas of its driver. 
+INFO: [Synth 8-6064] Net \u_ap_user_top/u_audio_ram/addr_cnt_reg [2] is driving 28 big block pins (URAM, BRAM and DSP loads). Created 3 replicas of its driver. 
 INFO: [Synth 8-6064] Net \u_ap_user_top/u_audio_ram/addr_cnt_reg [4] is driving 28 big block pins (URAM, BRAM and DSP loads). Created 3 replicas of its driver. 
 INFO: [Synth 8-6064] Net \u_ap_user_top/u_audio_ram/addr_cnt_reg [5] is driving 28 big block pins (URAM, BRAM and DSP loads). Created 3 replicas of its driver. 
 INFO: [Synth 8-6064] Net \u_ap_user_top/u_audio_ram/addr_cnt_reg [6] is driving 28 big block pins (URAM, BRAM and DSP loads). Created 3 replicas of its driver. 
 INFO: [Synth 8-6064] Net \u_ap_user_top/u_audio_ram/addr_cnt_reg[7]_rep_n_0  is driving 28 big block pins (URAM, BRAM and DSP loads). Created 3 replicas of its driver. 
 INFO: [Synth 8-6064] Net \u_ap_user_top/u_audio_ram/addr_cnt_reg[8]_rep_n_0  is driving 28 big block pins (URAM, BRAM and DSP loads). Created 3 replicas of its driver. 
 INFO: [Synth 8-6064] Net \u_ap_user_top/u_audio_ram/addr_cnt_reg [9] is driving 28 big block pins (URAM, BRAM and DSP loads). Created 3 replicas of its driver. 
-INFO: [Synth 8-6064] Net \u_ap_user_top/u_audio_ram/addr_cnt_reg[10]_rep_n_0  is driving 28 big block pins (URAM, BRAM and DSP loads). Created 3 replicas of its driver. 
+INFO: [Synth 8-6064] Net \u_ap_user_top/u_audio_ram/addr_cnt_reg [10] is driving 28 big block pins (URAM, BRAM and DSP loads). Created 3 replicas of its driver. 
 INFO: [Synth 8-6064] Net \u_ap_user_top/u_audio_ram/addr_cnt_reg [11] is driving 28 big block pins (URAM, BRAM and DSP loads). Created 3 replicas of its driver. 
 INFO: [Synth 8-6064] Net \u_ap_user_top/u_audio_ram/addr_cnt_reg [12] is driving 28 big block pins (URAM, BRAM and DSP loads). Created 3 replicas of its driver. 
 INFO: [Synth 8-6064] Net \u_ap_user_top/u_audio_ram/addr_cnt_reg [13] is driving 28 big block pins (URAM, BRAM and DSP loads). Created 3 replicas of its driver. 
 INFO: [Synth 8-6064] Net \u_ap_user_top/u_audio_ram/addr_cnt_reg [14] is driving 28 big block pins (URAM, BRAM and DSP loads). Created 3 replicas of its driver. 
 INFO: [Synth 8-6064] Net \u_ap_user_top/u_audio_ram/addr_cnt_reg[15]_rep_n_0  is driving 28 big block pins (URAM, BRAM and DSP loads). Created 3 replicas of its driver. 
-INFO: [Synth 8-6064] Net \u_ap_user_top/u_audio_ram/addr_cnt_reg [0] is driving 36 big block pins (URAM, BRAM and DSP loads). Created 4 replicas of its driver. 
-INFO: [Synth 8-6064] Net \u_ap_user_top/u_audio_ram/addr_cnt_reg[1]_rep_n_0  is driving 36 big block pins (URAM, BRAM and DSP loads). Created 4 replicas of its driver. 
-INFO: [Synth 8-6064] Net \u_ap_user_top/u_audio_ram/addr_cnt_reg [2] is driving 36 big block pins (URAM, BRAM and DSP loads). Created 4 replicas of its driver. 
-INFO: [Synth 8-6064] Net \u_ap_user_top/u_audio_ram/addr_cnt_reg[3]_rep_n_0  is driving 36 big block pins (URAM, BRAM and DSP loads). Created 4 replicas of its driver. 
+INFO: [Synth 8-6064] Net \u_ap_user_top/u_audio_ram/addr_cnt_reg[0]_rep_n_0  is driving 36 big block pins (URAM, BRAM and DSP loads). Created 4 replicas of its driver. 
+INFO: [Synth 8-6064] Net \u_ap_user_top/u_audio_ram/addr_cnt_reg [1] is driving 44 big block pins (URAM, BRAM and DSP loads). Created 5 replicas of its driver. 
+INFO: [Synth 8-6064] Net \u_ap_user_top/u_audio_ram/addr_cnt_reg[2]_rep_n_0  is driving 36 big block pins (URAM, BRAM and DSP loads). Created 4 replicas of its driver. 
+INFO: [Synth 8-6064] Net \u_ap_user_top/u_audio_ram/addr_cnt_reg [3] is driving 44 big block pins (URAM, BRAM and DSP loads). Created 5 replicas of its driver. 
 INFO: [Synth 8-6064] Net \u_ap_user_top/u_audio_ram/addr_cnt_reg[4]_rep_n_0  is driving 36 big block pins (URAM, BRAM and DSP loads). Created 4 replicas of its driver. 
 INFO: [Synth 8-6064] Net \u_ap_user_top/u_audio_ram/addr_cnt_reg[5]_rep_n_0  is driving 36 big block pins (URAM, BRAM and DSP loads). Created 4 replicas of its driver. 
 INFO: [Synth 8-6064] Net \u_ap_user_top/u_audio_ram/addr_cnt_reg[6]_rep_n_0  is driving 36 big block pins (URAM, BRAM and DSP loads). Created 4 replicas of its driver. 
 INFO: [Synth 8-6064] Net \u_ap_user_top/u_audio_ram/addr_cnt_reg [7] is driving 36 big block pins (URAM, BRAM and DSP loads). Created 4 replicas of its driver. 
 INFO: [Synth 8-6064] Net \u_ap_user_top/u_audio_ram/addr_cnt_reg [8] is driving 36 big block pins (URAM, BRAM and DSP loads). Created 4 replicas of its driver. 
 INFO: [Synth 8-6064] Net \u_ap_user_top/u_audio_ram/addr_cnt_reg[9]_rep_n_0  is driving 36 big block pins (URAM, BRAM and DSP loads). Created 4 replicas of its driver. 
-INFO: [Synth 8-6064] Net \u_ap_user_top/u_audio_ram/addr_cnt_reg [10] is driving 36 big block pins (URAM, BRAM and DSP loads). Created 4 replicas of its driver. 
+INFO: [Synth 8-6064] Net \u_ap_user_top/u_audio_ram/addr_cnt_reg[10]_rep_n_0  is driving 36 big block pins (URAM, BRAM and DSP loads). Created 4 replicas of its driver. 
 INFO: [Synth 8-6064] Net \u_ap_user_top/u_audio_ram/addr_cnt_reg[11]_rep_n_0  is driving 36 big block pins (URAM, BRAM and DSP loads). Created 4 replicas of its driver. 
 INFO: [Synth 8-6064] Net \u_ap_user_top/u_audio_ram/addr_cnt_reg[12]_rep_n_0  is driving 36 big block pins (URAM, BRAM and DSP loads). Created 4 replicas of its driver. 
 INFO: [Synth 8-6064] Net \u_ap_user_top/u_audio_ram/addr_cnt_reg[13]_rep_n_0  is driving 36 big block pins (URAM, BRAM and DSP loads). Created 4 replicas of its driver. 
@@ -949,13 +965,13 @@ INFO: [Synth 8-6064] Net dac_enb is driving 200 big block pins (URAM, BRAM and D
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:02:13 ; elapsed = 00:02:37 . Memory (MB): peak = 1039.547 ; gain = 494.902
+Finished IO Insertion : Time (s): cpu = 00:00:58 ; elapsed = 00:01:01 . Memory (MB): peak = 1040.828 ; gain = 495.387
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:02:13 ; elapsed = 00:02:37 . Memory (MB): peak = 1039.547 ; gain = 494.902
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:58 ; elapsed = 00:01:01 . Memory (MB): peak = 1040.828 ; gain = 495.387
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -974,25 +990,25 @@ Report Check Netlist:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:14 ; elapsed = 00:02:38 . Memory (MB): peak = 1039.547 ; gain = 494.902
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:59 ; elapsed = 00:01:02 . Memory (MB): peak = 1040.828 ; gain = 495.387
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:02:14 ; elapsed = 00:02:38 . Memory (MB): peak = 1039.547 ; gain = 494.902
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:59 ; elapsed = 00:01:02 . Memory (MB): peak = 1040.828 ; gain = 495.387
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:02:14 ; elapsed = 00:02:38 . Memory (MB): peak = 1039.605 ; gain = 494.961
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:59 ; elapsed = 00:01:02 . Memory (MB): peak = 1040.844 ; gain = 495.402
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:02:14 ; elapsed = 00:02:38 . Memory (MB): peak = 1039.605 ; gain = 494.961
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:59 ; elapsed = 00:01:02 . Memory (MB): peak = 1040.844 ; gain = 495.402
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -1012,19 +1028,19 @@ Report Cell Usage:
 |2     |CARRY4      |    67|
 |3     |DSP48E1_1   |    32|
 |4     |DSP48E1_2   |     4|
-|5     |LUT1        |    10|
-|6     |LUT2        |   210|
-|7     |LUT3        |    53|
-|8     |LUT4        |    54|
-|9     |LUT5        |   162|
-|10    |LUT6        |   183|
+|5     |LUT1        |     7|
+|6     |LUT2        |   199|
+|7     |LUT3        |    68|
+|8     |LUT4        |    44|
+|9     |LUT5        |   147|
+|10    |LUT6        |   211|
 |11    |MMCME2_BASE |     2|
 |12    |RAMB36E1    |    16|
 |13    |RAMB36E1_1  |    16|
-|14    |FDCE        |   344|
+|14    |FDCE        |   326|
 |15    |FDPE        |    14|
-|16    |FDRE        |   275|
-|17    |FDSE        |     1|
+|16    |FDRE        |   280|
+|17    |FDSE        |     4|
 |18    |IBUF        |    10|
 |19    |IOBUF       |     2|
 |20    |OBUF        |    22|
@@ -1034,51 +1050,50 @@ Report Instance Areas:
 +------+------------------------+--------------------------+------+
 |      |Instance                |Module                    |Cells |
 +------+------------------------+--------------------------+------+
-|1     |top                     |                          |  1482|
-|2     |  u_ap_codec_if         |ap_codec_if               |   596|
+|1     |top                     |                          |  1476|
+|2     |  u_ap_codec_if         |ap_codec_if               |   594|
 |3     |    u_ac_i2c_if         |ac_i2c_if                 |   286|
 |4     |      u_ac_i2c_wrapper  |ac_i2c_wrapper            |   192|
 |5     |        u_ac_i2c_master |ac_i2c_master             |   130|
-|6     |    u_ac_i2s_if         |ac_i2s_if                 |   310|
-|7     |  u_ap_user_top         |ap_user_top               |   833|
-|8     |    u_audio_ram         |audio_ram                 |   230|
-|9     |    u_fir_bank          |fir_sel                   |   409|
-|10    |      u_fir_hp9_l       |fir_trn__parameterized0   |    87|
-|11    |      u_fir_hp9_r       |fir_trn__parameterized0_0 |    89|
-|12    |      u_fir_lp9_l       |fir_trn                   |   105|
-|13    |      u_fir_lp9_r       |fir_trn_1                 |   104|
-|14    |    u_rot_dec           |enc_decoder               |    15|
-|15    |    u_seg7              |seg7_driver               |    37|
-|16    |    u_tone_gen          |tone_gen                  |    68|
-|17    |  u_clk_rst             |clk_rst_gen               |    18|
-|18    |    u_clk_gen           |clk_gen                   |    10|
-|19    |    u_rst_gen           |rst_gen                   |     8|
+|6     |    u_ac_i2s_if         |ac_i2s_if                 |   308|
+|7     |  u_ap_user_top         |ap_user_top               |   830|
+|8     |    u_audio_ram         |audio_ram                 |   228|
+|9     |    u_fir_bank          |fir_sel                   |   415|
+|10    |      u_fir_hp9_l       |fir_trn__parameterized0   |    91|
+|11    |      u_fir_hp9_r       |fir_trn__parameterized0_0 |   102|
+|12    |      u_fir_lp9_l       |fir_trn                   |   104|
+|13    |      u_fir_lp9_r       |fir_trn_1                 |    94|
+|14    |    u_rotary_encoder    |rotary_encoder_ctrl       |    72|
+|15    |    u_tone_gen          |tone_gen                  |    49|
+|16    |  u_clk_rst             |clk_rst_gen               |    18|
+|17    |    u_clk_gen           |clk_gen                   |    10|
+|18    |    u_rst_gen           |rst_gen                   |     8|
 +------+------------------------+--------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:02:14 ; elapsed = 00:02:38 . Memory (MB): peak = 1039.605 ; gain = 494.961
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:59 ; elapsed = 00:01:02 . Memory (MB): peak = 1040.844 ; gain = 495.402
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:01:48 ; elapsed = 00:02:28 . Memory (MB): peak = 1039.605 ; gain = 389.867
-Synthesis Optimization Complete : Time (s): cpu = 00:02:15 ; elapsed = 00:02:39 . Memory (MB): peak = 1039.605 ; gain = 494.961
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:49 ; elapsed = 00:00:58 . Memory (MB): peak = 1040.844 ; gain = 397.215
+Synthesis Optimization Complete : Time (s): cpu = 00:00:59 ; elapsed = 00:01:02 . Memory (MB): peak = 1040.844 ; gain = 495.402
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.114 . Memory (MB): peak = 1047.625 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.072 . Memory (MB): peak = 1048.840 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 139 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1048.695 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1049.898 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 4 instances were transformed.
   IOBUF => IOBUF (IBUF, OBUFT): 2 instances
   MMCME2_BASE => MMCME2_ADV: 2 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-212 Infos, 23 Warnings, 0 Critical Warnings and 0 Errors encountered.
+209 Infos, 33 Warnings, 5 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:02:31 ; elapsed = 00:03:00 . Memory (MB): peak = 1048.695 ; gain = 748.602
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1048.695 ; gain = 0.000
+synth_design: Time (s): cpu = 00:01:04 ; elapsed = 00:01:09 . Memory (MB): peak = 1049.898 ; gain = 749.391
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1049.898 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'C:/git/DIDE/dide_fs26/zybo_ps1/vivado/zybo_ps1.runs/synth_1/zybo_ps1_top.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file zybo_ps1_top_utilization_synth.rpt -pb zybo_ps1_top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Tue Apr 28 21:57:22 2026...
+INFO: [Common 17-206] Exiting Vivado at Wed Apr 29 16:15:22 2026...

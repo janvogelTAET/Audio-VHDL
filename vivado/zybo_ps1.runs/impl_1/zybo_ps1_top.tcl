@@ -66,7 +66,6 @@ set ACTIVE_STEP write_bitstream
 set rc [catch {
   create_msg_db write_bitstream.pb
   set_param chipscope.maxJobs 2
-  set_param xicom.use_bs_reader 1
   open_checkpoint zybo_ps1_top_routed.dcp
   set_property webtalk.parent_dir C:/git/DIDE/dide_fs26/zybo_ps1/vivado/zybo_ps1.cache/wt [current_project]
   catch { write_mem_info -force zybo_ps1_top.mmi }

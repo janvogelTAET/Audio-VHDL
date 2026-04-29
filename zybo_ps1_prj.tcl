@@ -31,8 +31,8 @@ lappend vhdl_src_files ap_user/fir/fir_sel.vhd
 lappend vhdl_src_files ap_user/dds/dds.vhd
 lappend vhdl_src_files ap_user/audio/tone_gen.vhd
 lappend vhdl_src_files ap_user/audio/audio_ram.vhd
-lappend vhdl_src_files ap_user/seg/enc_decoder.vhd
 lappend vhdl_src_files ap_user/seg/seg7_driver.vhd
+lappend vhdl_src_files ap_user/seg/rotary_encoder_ctrl.vhd
 lappend vhdl_src_files ap_user/ap_user_top.vhd
 # Top level
 lappend vhdl_src_files zybo_ps1_top.vhd

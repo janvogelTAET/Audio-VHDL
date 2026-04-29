@@ -100,11 +100,15 @@ begin
   ---------------------------------------------------------------------------
   -- Frequency selection (combinatorial)
   ---------------------------------------------------------------------------
-  with freq_sel_pi select phase_step <=
-    C_STEP_440 when "00",
-    C_STEP_880 when "01",
-    C_STEP_1K  when "10",
-    C_STEP_2K  when others;
+P_freq_sel : process(freq_sel_pi)
+  begin
+    case freq_sel_pi is
+      when "00" => phase_step <= C_STEP_440;
+      when "01" => phase_step <= C_STEP_880;
+      when "10" => phase_step <= C_STEP_1K;
+      when others => phase_step <= C_STEP_2K;
+    end case;
+  end process;
 
   ---------------------------------------------------------------------------
   -- Phase accumulator: advances each audio sample, wraps naturally (mod 2^16)

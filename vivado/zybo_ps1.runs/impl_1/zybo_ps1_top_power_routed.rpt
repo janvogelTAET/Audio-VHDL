@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date             : Tue Apr 28 21:59:29 2026
+| Date             : Wed Apr 29 16:18:37 2026
 | Host             : Jan running 64-bit major release  (build 9200)
 | Command          : report_power -file zybo_ps1_top_power_routed.rpt -pb zybo_ps1_top_power_summary_routed.pb -rpx zybo_ps1_top_power_routed.rpx
 | Design           : zybo_ps1_top
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.364        |
+| Total On-Chip Power (W)  | 0.358        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.266        |
+| Dynamic (W)              | 0.260        |
 | Device Static (W)        | 0.098        |
 | Effective TJA (C/W)      | 11.5         |
-| Max Ambient (C)          | 80.8         |
-| Junction Temperature (C) | 29.2         |
+| Max Ambient (C)          | 80.9         |
+| Junction Temperature (C) | 29.1         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -53,18 +53,18 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.005 |        8 |       --- |             --- |
-| Slice Logic    |     0.004 |     1464 |       --- |             --- |
-|   LUT as Logic |     0.004 |      553 |     17600 |            3.14 |
+| Slice Logic    |     0.004 |     1456 |       --- |             --- |
+|   LUT as Logic |     0.004 |      560 |     17600 |            3.18 |
 |   CARRY4       |    <0.001 |       67 |      4400 |            1.52 |
-|   Register     |    <0.001 |      639 |     35200 |            1.82 |
-|   Others       |     0.000 |       42 |       --- |             --- |
-| Signals        |     0.005 |     2904 |       --- |             --- |
+|   Register     |    <0.001 |      629 |     35200 |            1.79 |
+|   Others       |     0.000 |       40 |       --- |             --- |
+| Signals        |     0.005 |     2902 |       --- |             --- |
 | Block RAM      |    <0.001 |       32 |        60 |           53.33 |
 | MMCM           |     0.202 |        2 |         2 |          100.00 |
 | DSPs           |     0.033 |       36 |        80 |           45.00 |
-| I/O            |     0.015 |       34 |       100 |           34.00 |
+| I/O            |     0.010 |       34 |       100 |           34.00 |
 | Static Power   |     0.098 |          |           |                 |
-| Total          |     0.364 |          |           |                 |
+| Total          |     0.358 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -75,8 +75,8 @@ Table of Contents
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
 | Vccint    |       1.000 |     0.053 |       0.048 |      0.005 |
-| Vccaux    |       1.800 |     0.119 |       0.113 |      0.006 |
-| Vcco33    |       3.300 |     0.005 |       0.004 |      0.001 |
+| Vccaux    |       1.800 |     0.118 |       0.113 |      0.006 |
+| Vcco33    |       3.300 |     0.004 |       0.003 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -155,18 +155,18 @@ Table of Contents
 +------------------------+-----------+
 | Name                   | Power (W) |
 +------------------------+-----------+
-| zybo_ps1_top           |     0.266 |
-|   u_ap_codec_if        |     0.003 |
+| zybo_ps1_top           |     0.260 |
+|   u_ap_codec_if        |     0.004 |
 |     u_ac_i2c_if        |     0.002 |
 |       u_ac_i2c_wrapper |     0.001 |
 |     u_ac_i2s_if        |     0.002 |
-|   u_ap_user_top        |     0.044 |
+|   u_ap_user_top        |     0.043 |
 |     u_audio_ram        |     0.002 |
 |     u_fir_bank         |     0.040 |
 |       u_fir_hp9_l      |     0.011 |
 |       u_fir_hp9_r      |     0.011 |
-|       u_fir_lp9_l      |     0.010 |
-|       u_fir_lp9_r      |     0.010 |
+|       u_fir_lp9_l      |     0.009 |
+|       u_fir_lp9_r      |     0.009 |
 |   u_clk_rst            |     0.203 |
 |     u_clk_gen          |     0.203 |
 +------------------------+-----------+

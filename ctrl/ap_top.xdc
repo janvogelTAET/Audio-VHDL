@@ -1,38 +1,67 @@
-################################################################
-# Project: DIDE Audio Processing Reference Design
-# Entity : ap_ref_design_top.vhd
-# Author : Waj
-################################################################
+################################################################################
+# Project       : DIDE Audio Processing Reference Design
+# Entity        : ap_ref_design_top.vhd
+# Description   : Physical and Timing Constraints for Zybo Z7
+################################################################################
 
-################################################################
+################################################################################
 # Physical Constraints
-################################################################
+################################################################################
 
-# Clock & Reset
+# Primary Clock & Reset
 set_property -dict {PACKAGE_PIN L16 IOSTANDARD LVCMOS33} [get_ports clk_pi]
 set_property -dict {PACKAGE_PIN R18 IOSTANDARD LVCMOS33} [get_ports rst_pi]
 
-# Inputs
+# User Switches (SW0..SW3)
 set_property -dict {PACKAGE_PIN G15 IOSTANDARD LVCMOS33} [get_ports {sw_pi[0]}]
 set_property -dict {PACKAGE_PIN P15 IOSTANDARD LVCMOS33} [get_ports {sw_pi[1]}]
-set_property -dict {PACKAGE_PIN W13 IOSTANDARD LVCMOS33} [get_ports {sw_pi[2]}];
-# set_property -dict {PACKAGE_PIN T16 IOSTANDARD LVCMOS33} [get_ports {sw_pi[3]}]; # SW_3
+set_property -dict {PACKAGE_PIN W13 IOSTANDARD LVCMOS33} [get_ports {sw_pi[2]}]
+#set_property -dict {PACKAGE_PIN T16 IOSTANDARD LVCMOS33} [get_ports {sw_pi[3]}]
 
-# Outputs
+# User Buttons (BTN1, BTN2)
+set_property -dict {PACKAGE_PIN P16 IOSTANDARD LVCMOS33} [get_ports {btn_pi[1]}]
+set_property -dict {PACKAGE_PIN V16 IOSTANDARD LVCMOS33} [get_ports {btn_pi[2]}]
+
+# Rotary Encoder
+set_property -dict {PACKAGE_PIN U20 IOSTANDARD LVCMOS33 PULLUP TRUE} [get_ports rot_a_pi]
+set_property -dict {PACKAGE_PIN Y19 IOSTANDARD LVCMOS33 PULLUP TRUE} [get_ports rot_b_pi]
+
+# LED Bar Graph (8-bit)
+set_property -dict {PACKAGE_PIN U14 IOSTANDARD LVCMOS33} [get_ports {led8_po[0]}]
+set_property -dict {PACKAGE_PIN T14 IOSTANDARD LVCMOS33} [get_ports {led8_po[1]}]
+set_property -dict {PACKAGE_PIN U15 IOSTANDARD LVCMOS33} [get_ports {led8_po[2]}]
+set_property -dict {PACKAGE_PIN T15 IOSTANDARD LVCMOS33} [get_ports {led8_po[3]}]
+set_property -dict {PACKAGE_PIN V17 IOSTANDARD LVCMOS33} [get_ports {led8_po[4]}]
+set_property -dict {PACKAGE_PIN P14 IOSTANDARD LVCMOS33} [get_ports {led8_po[5]}]
+set_property -dict {PACKAGE_PIN V18 IOSTANDARD LVCMOS33} [get_ports {led8_po[6]}]
+set_property -dict {PACKAGE_PIN R14 IOSTANDARD LVCMOS33} [get_ports {led8_po[7]}]
+
+# Status LEDs (4-bit, onboard LD0..LD3)
 set_property -dict {PACKAGE_PIN M14 IOSTANDARD LVCMOS33} [get_ports {led4_po[0]}]
 set_property -dict {PACKAGE_PIN M15 IOSTANDARD LVCMOS33} [get_ports {led4_po[1]}]
 set_property -dict {PACKAGE_PIN G14 IOSTANDARD LVCMOS33} [get_ports {led4_po[2]}]
 set_property -dict {PACKAGE_PIN D18 IOSTANDARD LVCMOS33} [get_ports {led4_po[3]}]
-set_property -dict {PACKAGE_PIN U14 IOSTANDARD LVCMOS33} [get_ports {led8_po[0]}]
-set_property -dict {PACKAGE_PIN T14 IOSTANDARD LVCMOS33} [get_ports {led8_po[1]}]
-set_property -dict {PACKAGE_PIN U15 IOSTANDARD LVCMOS33} [get_ports {led8_po[2]}]
-#set_property -dict {PACKAGE_PIN T15 IOSTANDARD LVCMOS33} [get_ports {led8_po[3]}]
-#set_property -dict {PACKAGE_PIN V17 IOSTANDARD LVCMOS33} [get_ports {led8_po[4]}]
-#set_property -dict {PACKAGE_PIN P14 IOSTANDARD LVCMOS33} [get_ports {led8_po[5]}]
-#set_property -dict {PACKAGE_PIN V18 IOSTANDARD LVCMOS33} [get_ports {led8_po[6]}]
-#set_property -dict {PACKAGE_PIN R14 IOSTANDARD LVCMOS33} [get_ports {led8_po[7]}]
 
-# Audio Codec I2S
+# ==============================================================================
+# 7-Segment Anzeige (Exakt aus �bung 9)
+# ==============================================================================
+set_property -dict { PACKAGE_PIN V15   IOSTANDARD LVCMOS33 } [get_ports { seg_po[0] }] ;# Segment A
+set_property -dict { PACKAGE_PIN Y14   IOSTANDARD LVCMOS33 } [get_ports { seg_po[1] }] ;# Segment B
+set_property -dict { PACKAGE_PIN W15   IOSTANDARD LVCMOS33 } [get_ports { seg_po[2] }] ;# Segment C
+set_property -dict { PACKAGE_PIN T12   IOSTANDARD LVCMOS33 } [get_ports { seg_po[3] }] ;# Segment D
+set_property -dict { PACKAGE_PIN T11   IOSTANDARD LVCMOS33 } [get_ports { seg_po[4] }] ;# Segment E
+set_property -dict { PACKAGE_PIN U12   IOSTANDARD LVCMOS33 } [get_ports { seg_po[5] }] ;# Segment F
+set_property -dict { PACKAGE_PIN T10   IOSTANDARD LVCMOS33 } [get_ports { seg_po[6] }] ;# Segment G
+
+# ==============================================================================
+# 7-Segment Anoden (Digit Select)
+# W14 ist der 8. Pin des Ports und steuert den Wechsel der Ziffern!
+# V12 ist ein Dummy-Pin f�r an_po[1], damit Vivado nicht abst�rzt.
+# ==============================================================================
+set_property -dict { PACKAGE_PIN W14   IOSTANDARD LVCMOS33 } [get_ports { an_po[0] }]
+set_property -dict { PACKAGE_PIN V12   IOSTANDARD LVCMOS33 } [get_ports { an_po[1] }]
+
+# Audio Codec I2S Interface
 set_property -dict {PACKAGE_PIN K18 IOSTANDARD LVCMOS33} [get_ports ac_bclk_po]
 set_property -dict {PACKAGE_PIN T19 IOSTANDARD LVCMOS33} [get_ports ac_mclk_po]
 set_property -dict {PACKAGE_PIN P18 IOSTANDARD LVCMOS33} [get_ports ac_mute_n_po]
@@ -41,122 +70,46 @@ set_property -dict {PACKAGE_PIN L17 IOSTANDARD LVCMOS33} [get_ports ac_pblrc_po]
 set_property -dict {PACKAGE_PIN K17 IOSTANDARD LVCMOS33} [get_ports ac_recdat_pi]
 set_property -dict {PACKAGE_PIN M18 IOSTANDARD LVCMOS33} [get_ports ac_reclrc_po]
 
-# Audio Codec I2C
-set_property PACKAGE_PIN N18 [get_ports ac_scl_pio]
-set_property IOSTANDARD LVCMOS33 [get_ports ac_scl_pio]
-set_property PULLUP true [get_ports ac_scl_pio]
-set_property PACKAGE_PIN N17 [get_ports ac_sda_pio]
-set_property IOSTANDARD LVCMOS33 [get_ports ac_sda_pio]
-set_property PULLUP true [get_ports ac_sda_pio]
+# Audio Codec I2C Configuration Interface
+set_property -dict {PACKAGE_PIN N18 IOSTANDARD LVCMOS33 PULLUP true} [get_ports ac_scl_pio]
+set_property -dict {PACKAGE_PIN N17 IOSTANDARD LVCMOS33 PULLUP true} [get_ports ac_sda_pio]
 
 
-################################################################
+################################################################################
 # Timing Constraints
-################################################################
+################################################################################
 
-##############
-# Primary input clocks
-##############
-# Define external 125 MHz clock source (input to MMCM1)
+# Base Clock Definition
 create_clock -period 8.000 -name clk_pi_125 -waveform {0.000 4.000} -add [get_ports clk_pi]
 
-#############
-# CDC constraints for asynchronous clocks SYS_CLK and BCLK (C0...C2)
-#############
-### Constrain max path delays between asynchronous CLK_SYS and BCLK domains
-# Note: Setting both clock domains as asynchrouns with the command below does not
-#       work, because this would overrule the subsequent set_max_delay command
-#       which is necessary to constrain the delay to the first SYS_CLK synchr. FF
-#       for signal smpl_enb_reg.
-#       set_clock_groups -asynchronous -group mmcm1_clkout0 -group mmcm2_clkout0
-# set max. delay from source FF (bclk) to the first sync FF (clk_sys) <= 1 clk_sys cc (C0).
+# Clock Domain Crossing (CDC) Constraints
 set_max_delay -datapath_only -from [get_cells u_ap_codec_if/u_ac_i2s_if/smpl_enb_regb_r*] -to [get_cells {u_ap_codec_if/u_ac_i2s_if/sync_regs_reg[0]}] 10.000
-
-# declare all synchronization FFs as asynchronous to force min. delay between them (C0)
 set_property ASYNC_REG true [get_cells u_ap_codec_if/u_ac_i2s_if/sync_regs_reg*]
 
-# set max. delay of DAC sample rebister pathes (CLK_SYS -> BCLK) to <= 2 clk_sys cc (C1).
 set_max_delay -datapath_only -from [get_cells u_ap_codec_if/u_ac_i2s_if/dac*regs_reg*] -to [get_cells u_ap_codec_if/u_ac_i2s_if/dac*regb_reg*] 20.000
-
-# set max. delay of ADC sample register pathes (BCLK -> CLK_SYS) to <= 2 clk_sys cc (C2).
 set_max_delay -datapath_only -from [get_cells u_ap_codec_if/u_ac_i2s_if/adc*regb_reg*] -to [get_cells u_ap_codec_if/u_ac_i2s_if/adc*regs_reg*] 20.000
 
-##############
-# External input/output delays 
-##############
-### external I2S/SSM2603 interface signals
-# Note: For both inputs and outputs, the clock (BCLK) is generated within the FPGA.
-#       For outputs from the FPGA to the AC, this corresponds to classical source-
-#       synchronous clocking (clock transmitted together with data). The max. allowed
-#       signal skew is set to 1/8 BCLK period before or after the generating (falling) 
-#       edge. This will provide sufficient safety margin for secure sampling with the
-#       rising edge within the AC.
-#       For inputs from the AC to the FPGA, a source-synchronous clocking is assumed for
-#       contraining, 
-#       ..........  
-# generate clock at BLCK output pin corresponding to BCLK source pin
+# Generated Clocks
 create_generated_clock -name bclk_out -multiply_by 1 -source [get_pins u_clk_rst/u_clk_gen/u_mmcm2/CLKOUT0] [get_ports ac_bclk_po]
-# define relevant delay values
-set bclk_period 	81.4;	        # BCLK_period = 1/12.288 MHz
-set skew     	     8.1;			# leave max. 1/10 of BCLK period for internal FPGA delay  
-set in_skew  	    6.0;			# max. 1/4 BCLK period after/before falling (generating) edge  
 
-# output_delay for signals to audio codec (C3)
+# External Input/Output Delay Parameters
+set bclk_period 81.4
+set skew 8.1
+set in_skew 6.0
+
+# Output Delays
 set out_ports {ac_pbdat_po ac_pblrc_po ac_reclrc_po}
-set_output_delay -clock bclk_out -max [expr $bclk_period - $skew] [get_ports $out_ports] -clock_fall;
-set_output_delay -clock bclk_out -min $skew                       [get_ports $out_ports] -clock_fall;
+set_output_delay -clock bclk_out -max [expr $bclk_period - $skew] [get_ports $out_ports] -clock_fall
+set_output_delay -clock bclk_out -min $skew [get_ports $out_ports] -clock_fall
 
-# input_delay for signals from audio codec (C4)
+# Input Delays
 set in_ports {ac_recdat_pi}
-set_input_delay -clock bclk_out -max [expr $bclk_period - $skew] [get_ports $in_ports] 
-set_input_delay -clock bclk_out -min $skew                       [get_ports $in_ports] 
+set_input_delay -clock bclk_out -max [expr $bclk_period - $skew] [get_ports $in_ports]
+set_input_delay -clock bclk_out -min $skew [get_ports $in_ports]
 
-##############
-# Timing relaxation in CLK_SYS domain
-##############
-### set multi_cycle constraints w.r.t. adc/dac sample rate. 
-### Note: The max. supported sample rate is 96 kHz. With 100 kHz, there are 
-#         100 MHz/100 kHz = 1000 CLK_SYS cycles between two successive ADC/DAC sample
-#         enable signals.
-#         For each multi-cycle constraints two commands are needed (2nd to bring hold 
-#         requirement back to current clock edge).
-# set sample enable rate in CLK_SYS domain
+# Multicycle Path Constraints for ADC/DAC Sample Rate
 set SMPL_ENB_RATE 1000
-# get all FFs with CE connected to the FF output in I2S-Interface that generate the ADC/DAC enable signal
 set SmplCEcells [get_cells -of [filter [all_fanout -flat -endpoints [get_pins u_ap_codec_if/u_ac_i2s_if/data_enb_regs*/Q]] IS_ENABLE]]
-# set multi-cycle constraint between all FFs with CE connected to the sample enable signal
+
 set_multicycle_path -from $SmplCEcells -to $SmplCEcells -setup $SMPL_ENB_RATE
-set_multicycle_path -from $SmplCEcells -to $SmplCEcells -hold [expr $SMPL_ENB_RATE-1]
-
-################################################################
-# Semesterleistung PS1: Physical Constraints
-################################################################
-
-# 1. 7-Segment Anzeige Segmente (Aus Übung 9)
-set_property -dict { PACKAGE_PIN V15   IOSTANDARD LVCMOS33 } [get_ports { seg_po[0] }]
-set_property -dict { PACKAGE_PIN Y14   IOSTANDARD LVCMOS33 } [get_ports { seg_po[1] }]
-set_property -dict { PACKAGE_PIN W15   IOSTANDARD LVCMOS33 } [get_ports { seg_po[2] }]
-set_property -dict { PACKAGE_PIN T12   IOSTANDARD LVCMOS33 } [get_ports { seg_po[3] }]
-set_property -dict { PACKAGE_PIN T11   IOSTANDARD LVCMOS33 } [get_ports { seg_po[4] }]
-set_property -dict { PACKAGE_PIN U12   IOSTANDARD LVCMOS33 } [get_ports { seg_po[5] }]
-set_property -dict { PACKAGE_PIN T10   IOSTANDARD LVCMOS33 } [get_ports { seg_po[6] }]
-
-# 2. Buttons (Zybo Z7 Onboard Buttons: BTN1 & BTN2)
-set_property -dict { PACKAGE_PIN P16   IOSTANDARD LVCMOS33 } [get_ports { btn_pi[1] }]
-set_property -dict { PACKAGE_PIN V16   IOSTANDARD LVCMOS33 } [get_ports { btn_pi[2] }]
-
-# 3. Drehgeber / Rotary Encoder (Aus Übung 6)
-set_property -dict { PACKAGE_PIN U20   IOSTANDARD LVCMOS33 } [get_ports { rot_a_pi }]
-set_property -dict { PACKAGE_PIN Y19   IOSTANDARD LVCMOS33 } [get_ports { rot_b_pi }]
-set_property PULLUP TRUE [get_ports { rot_a_pi }]
-set_property PULLUP TRUE [get_ports { rot_b_pi }]
-
-# ==============================================================
-# 4. Anoden für 7-Segment (Multiplexing)
-# W14 ist sehr wahrscheinlich, da es der letzte freie Pin im 
-# Display-Stecker ist. Für an_po[1] ist V12 vorerst ein Platzhalter.
-# Falls auf dem Board nur eine Ziffer leuchtet, musst du für 
-# an_po[1] den Pin noch im Shield-Handbuch (oder einer anderen Übung) nachschlagen.
-# ==============================================================
-set_property -dict { PACKAGE_PIN W14   IOSTANDARD LVCMOS33 } [get_ports { an_po[0] }]
-set_property -dict { PACKAGE_PIN V12   IOSTANDARD LVCMOS33 } [get_ports { an_po[1] }]
+set_multicycle_path -from $SmplCEcells -to $SmplCEcells -hold [expr $SMPL_ENB_RATE - 1]

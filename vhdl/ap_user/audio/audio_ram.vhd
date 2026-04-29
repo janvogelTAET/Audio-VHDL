@@ -2,7 +2,7 @@
 -- Project: DIDE Audio Processing
 -- Entity : audio_ram
 -- Author : VJA
--------------------------------------------------------------------------------$
+-------------------------------------------------------------------------------
 -- Description: 1.36s Audio Recorder/Player using Block-RAM (Requirement 5).
 
 library ieee;
@@ -23,15 +23,19 @@ end entity audio_ram;
 architecture rtl of audio_ram is
   -- 2^16 = 65536 Samples (ca. 1.36s @ 48kHz)
   type t_mem is array (0 to 65535) of signed(15 downto 0);
-  -- Attribut fÃ¼r Xilinx Vivado, um echtes Block-RAM zu erzwingen
+  signal ram : t_mem := (others => (others => '0'));
+  
+  -- Attribut für Xilinx Vivado, um echtes Block-RAM zu erzwingen
   attribute ram_style : string;
-  shared variable ram : t_mem;
-  attribute ram_style of ram : variable is "block";
+  attribute ram_style of ram : signal is "block";
 
-  signal addr_cnt : unsigned(15 downto 0) := (others => '0');
-  signal playing  : std_logic := '0';
+  signal addr_cnt  : unsigned(15 downto 0) := (others => '0');
+  signal playing   : std_logic := '0';
   signal recording : std_logic := '0';
+  signal dout_reg  : signed(15 downto 0) := (others => '0');
 begin
+
+  dout_po <= dout_reg;
 
   P_ctrl : process(clk_pi)
   begin
@@ -49,17 +53,21 @@ begin
           addr_cnt  <= (others => '0');
         end if;
 
-        -- ZÃ¤hler-Logik und RAM-Zugriff
+        -- Zähler-Logik und RAM-Zugriff
         if recording = '1' then
-          ram(to_integer(addr_cnt)) := din_pi;
+          ram(to_integer(addr_cnt)) <= din_pi;
           addr_cnt <= addr_cnt + 1;
-          if addr_cnt = 65535 then recording <= '0'; end if;
+          if addr_cnt = 65535 then 
+            recording <= '0';
+          end if;
         elsif playing = '1' then
-          dout_po  <= ram(to_integer(addr_cnt));
+          dout_reg <= ram(to_integer(addr_cnt));
           addr_cnt <= addr_cnt + 1;
-          if addr_cnt = 65535 then playing <= '0'; end if;
+          if addr_cnt = 65535 then 
+            playing <= '0';
+          end if;
         else
-          dout_po <= (others => '0');
+          dout_reg <= (others => '0');
         end if;
         
       end if;

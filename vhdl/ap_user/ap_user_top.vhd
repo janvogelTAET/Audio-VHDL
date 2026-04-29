@@ -58,9 +58,7 @@ architecture rtl of ap_user_top is
   signal ram_out        : signed(15 downto 0);
   
   -- UI and control signals
-  signal tick_l         : std_logic;
-  signal tick_r         : std_logic;
-  signal rot_count      : unsigned(3 downto 0) := (others => '0');
+  signal rot_count_s    : std_logic_vector(1 downto 0);
 
 begin
 
@@ -135,27 +133,11 @@ begin
         v_prod    := s1_reg * IIR_MA1;  
         v_add     := resize(v_prod, 34) - shift_left(resize(s2_reg, 34), 15);
         
-        -- f_rnd(v_add, 19) schneidet 15 Bits ab (34 - 15 = 19 Ziel-Breite)
         v_sat_rnd := f_sat(f_rnd(v_add, 19), DAC_DW);  
         
         s1_reg      <= v_sat_rnd;
         s2_reg      <= s1_reg;
         iir_out_reg <= v_sat_rnd;
-      end if;
-    end if;
-  end process;
-
-  --------------------------------------------------------------------------
-  -- Rotary encoder quadrature pulse tracking
-  --------------------------------------------------------------------------
-  P_rot_cnt : process(clk_pi)
-  begin
-    if rising_edge(clk_pi) then
-      if tick_r = '1' then 
-        rot_count <= rot_count + 1; 
-      end if;
-      if tick_l = '1' then 
-        rot_count <= rot_count - 1; 
       end if;
     end if;
   end process;
@@ -179,7 +161,7 @@ begin
       clk_pi      => clk_pi, 
       rst_pi      => rst_pi, 
       ce_pi       => dac_enb_pi,
-      freq_sel_pi => std_logic_vector(rot_count(1 downto 0)), 
+      freq_sel_pi => rot_count_s, 
       tone_l_po   => tone_out_l, 
       tone_r_po   => tone_out_r
     );
@@ -194,23 +176,23 @@ begin
       dout_po => ram_out
     );
 
-  u_rot_dec : entity work.enc_decoder
-    port map (
-      clk_pi        => clk_pi, 
-      rot_a_pi      => rot_a_pi, 
-      rot_b_pi      => rot_b_pi,
-      tick_left_po  => tick_l, 
-      tick_right_po => tick_r
-    );
-
   u_seg7 : entity work.seg7_driver
     port map (
       clk_pi    => clk_pi, 
       rst_pi    => rst_pi,
-      digit0_pi => std_logic_vector(rot_count), 
+      digit0_pi => "00" & rot_count_s, 
       digit1_pi => "0" & sw_pi,    
       seg_po    => seg_po, 
       an_po     => an_po
     );
+
+  u_rotary_encoder : entity work.rotary_encoder_ctrl
+    port map (
+      clk_i   => clk_pi,
+      rst_i   => rst_pi,
+      rot_a_i => rot_a_pi,
+      rot_b_i => rot_b_pi,
+      count_o => rot_count_s
+    );  
 
 end architecture rtl;
