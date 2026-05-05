@@ -1,0 +1,7 @@
+Running: xsim.dir/tb_zybo_ps1_top_behav/xsimk.exe -simmode gui -wdb tb_zybo_ps1_top_behav.wdb -simrunnum 0 -socket 51141
+Design successfully loaded
+Design Loading Memory Usage: 11432 KB (Peak: 11432 KB)
+Design Loading CPU Usage: 77 ms
+Simulation completed
+Simulation Memory Usage: 12876 KB (Peak: 12876 KB)
+Simulation CPU Usage: 92 ms

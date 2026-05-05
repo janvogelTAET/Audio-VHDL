@@ -1,0 +1,47 @@
+Vivado Simulator 2019.2
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: D:/Vivado/2019.2/bin/unwrapped/win64.o/xelab.exe -wto dde12ce7f76440ba8b47f9373f140783 --incr --debug typical --relax --mt 2 -L work -L secureip --snapshot tb_zybo_ps1_top_behav work.tb_zybo_ps1_top -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee.math_real
+Compiling package work.ap_design_pkg
+Compiling package unisim.vcomponents
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_signed
+Compiling package ieee.vital_timing
+Compiling package ieee.vital_primitives
+Compiling package unisim.vpkg
+Compiling package work.ac_ssm2603_pkg
+Compiling package work.ap_fir_pkg
+Compiling architecture bufg_v of entity unisim.BUFG [bufg_default]
+Compiling architecture mmcme2_adv_v of entity unisim.MMCME2_ADV [\MMCME2_ADV(clkfbout_mult_f=24.0...]
+Compiling architecture mmcme2_base_v of entity unisim.MMCME2_BASE [\MMCME2_BASE(clkfbout_mult_f=24....]
+Compiling architecture mmcme2_adv_v of entity unisim.MMCME2_ADV [\MMCME2_ADV(clkfbout_mult_f=48.0...]
+Compiling architecture mmcme2_base_v of entity unisim.MMCME2_BASE [\MMCME2_BASE(clkfbout_mult_f=48....]
+Compiling architecture rtl of entity work.clk_gen [clk_gen_default]
+Compiling architecture rtl of entity work.rst_gen [rst_gen_default]
+Compiling architecture rtl of entity work.clk_rst_gen [clk_rst_gen_default]
+Compiling architecture logic of entity work.ac_i2c_master [ac_i2c_master_default]
+Compiling architecture rtl of entity work.ac_i2c_wrapper [ac_i2c_wrapper_default]
+Compiling architecture rtl of entity work.ac_i2c_if [ac_i2c_if_default]
+Compiling architecture rtl of entity work.ac_i2s_if [ac_i2s_if_default]
+Compiling architecture rtl of entity work.ap_codec_if [ap_codec_if_default]
+Compiling architecture trn of entity work.fir_trn [\fir_trn(g_coef=("00000000000000...]
+Compiling architecture trn of entity work.fir_trn [\fir_trn(g_coef=("00000000000000...]
+Compiling architecture rtl of entity work.fir_sel [fir_sel_default]
+Compiling architecture rtl of entity work.tone_gen [tone_gen_default]
+Compiling architecture rtl of entity work.audio_ram [audio_ram_default]
+Compiling architecture rtl of entity work.seg7_driver [seg7_driver_default]
+Compiling architecture rtl of entity work.rotary_encoder_ctrl [rotary_encoder_ctrl_default]
+Compiling architecture rtl of entity work.ap_user_top [ap_user_top_default]
+Compiling architecture rtl of entity work.zybo_ps1_top [zybo_ps1_top_default]
+Compiling architecture tb of entity work.tb_zybo_ps1_top
+Built simulation snapshot tb_zybo_ps1_top_behav

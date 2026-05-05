@@ -1,0 +1,1 @@
+-wto "dde12ce7f76440ba8b47f9373f140783" --incr --debug "typical" --relax --mt "2" -L "work" -L "secureip" --snapshot "tb_zybo_ps1_top_behav" "work.tb_zybo_ps1_top" -log "elaborate.log" 
