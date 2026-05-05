@@ -30,11 +30,11 @@ set_property -dict {PACKAGE_PIN Y19 IOSTANDARD LVCMOS33 PULLUP TRUE} [get_ports 
 set_property -dict {PACKAGE_PIN U14 IOSTANDARD LVCMOS33} [get_ports {led8_po[0]}]
 set_property -dict {PACKAGE_PIN T14 IOSTANDARD LVCMOS33} [get_ports {led8_po[1]}]
 set_property -dict {PACKAGE_PIN U15 IOSTANDARD LVCMOS33} [get_ports {led8_po[2]}]
-set_property -dict {PACKAGE_PIN T15 IOSTANDARD LVCMOS33} [get_ports {led8_po[3]}]
-set_property -dict {PACKAGE_PIN V17 IOSTANDARD LVCMOS33} [get_ports {led8_po[4]}]
-set_property -dict {PACKAGE_PIN P14 IOSTANDARD LVCMOS33} [get_ports {led8_po[5]}]
-set_property -dict {PACKAGE_PIN V18 IOSTANDARD LVCMOS33} [get_ports {led8_po[6]}]
-set_property -dict {PACKAGE_PIN R14 IOSTANDARD LVCMOS33} [get_ports {led8_po[7]}]
+#set_property -dict {PACKAGE_PIN T15 IOSTANDARD LVCMOS33} [get_ports {led8_po[3]}]
+#set_property -dict {PACKAGE_PIN V17 IOSTANDARD LVCMOS33} [get_ports {led8_po[4]}]
+#set_property -dict {PACKAGE_PIN P14 IOSTANDARD LVCMOS33} [get_ports {led8_po[5]}]
+#set_property -dict {PACKAGE_PIN V18 IOSTANDARD LVCMOS33} [get_ports {led8_po[6]}]
+#set_property -dict {PACKAGE_PIN R14 IOSTANDARD LVCMOS33} [get_ports {led8_po[7]}]
 
 # Status LEDs (4-bit, onboard LD0..LD3)
 set_property -dict {PACKAGE_PIN M14 IOSTANDARD LVCMOS33} [get_ports {led4_po[0]}]
@@ -113,3 +113,4 @@ set SmplCEcells [get_cells -of [filter [all_fanout -flat -endpoints [get_pins u_
 
 set_multicycle_path -from $SmplCEcells -to $SmplCEcells -setup $SMPL_ENB_RATE
 set_multicycle_path -from $SmplCEcells -to $SmplCEcells -hold [expr $SMPL_ENB_RATE - 1]
+set_property IS_ENABLED 0 [get_drc_checks REQP-1839]

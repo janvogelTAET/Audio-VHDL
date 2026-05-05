@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date         : Wed Apr 29 16:18:02 2026
+| Date         : Tue May  5 15:39:43 2026
 | Host         : Jan running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file zybo_ps1_top_control_sets_placed.rpt
 | Design       : zybo_ps1_top
@@ -73,12 +73,12 @@ Table of Contents
 +---------------------------------+---------------------------------------------------------------------------------------------+-----------------------------------------------+------------------+----------------+
 |           Clock Signal          |                                        Enable Signal                                        |                Set/Reset Signal               | Slice Load Count | Bel Load Count |
 +---------------------------------+---------------------------------------------------------------------------------------------+-----------------------------------------------+------------------+----------------+
-| ~u_clk_rst/u_clk_gen/ac_mclk_po | u_ap_codec_if/u_ac_i2s_if/lrc_regb_i_2_n_0                                                  | u_ap_codec_if/u_ac_i2s_if/p_1_in              |                1 |              2 |
 |  u_clk_rst/u_clk_gen/clk_sys_po | u_ap_user_top/u_rotary_encoder/sample_en_reg_n_0                                            | u_clk_rst/u_rst_gen/rst_sys_po                |                1 |              2 |
-|  u_clk_rst/u_clk_gen/clk_sys_po |                                                                                             | u_clk_rst/u_clk_gen/AS[0]                     |                2 |              4 |
+| ~u_clk_rst/u_clk_gen/ac_mclk_po | u_ap_codec_if/u_ac_i2s_if/lrc_regb_i_2_n_0                                                  | u_ap_codec_if/u_ac_i2s_if/p_1_in              |                1 |              2 |
 |  u_clk_rst/u_clk_gen/clk_sys_po |                                                                                             | u_clk_rst/u_clk_gen/rst_pi[0]                 |                2 |              4 |
-|  u_clk_rst/u_clk_gen/clk_sys_po | u_ap_codec_if/u_ac_i2c_if/u_ac_i2c_wrapper/u_ac_i2c_master/E[0]                             | u_clk_rst/u_rst_gen/rst_ac_i2c_po             |                3 |              4 |
+|  u_clk_rst/u_clk_gen/clk_sys_po |                                                                                             | u_clk_rst/u_clk_gen/AS[0]                     |                2 |              4 |
 |  u_clk_rst/u_clk_gen/clk_sys_po | u_ap_codec_if/u_ac_i2c_if/reg_idx_q[3]_i_1_n_0                                              | u_clk_rst/u_rst_gen/rst_ac_i2c_po             |                1 |              4 |
+|  u_clk_rst/u_clk_gen/clk_sys_po | u_ap_codec_if/u_ac_i2c_if/u_ac_i2c_wrapper/u_ac_i2c_master/E[0]                             | u_clk_rst/u_rst_gen/rst_ac_i2c_po             |                3 |              4 |
 |  u_clk_rst/u_clk_gen/clk_sys_po | u_ap_codec_if/u_ac_i2c_if/u_ac_i2c_wrapper/u_ac_i2c_master/FSM_sequential_state_q_reg[0][0] | u_clk_rst/u_rst_gen/rst_ac_i2c_po             |                3 |              6 |
 |  u_clk_rst/u_clk_gen/clk_sys_po | u_ap_codec_if/u_ac_i2c_if/u_ac_i2c_wrapper/i2c_addr_d                                       | u_clk_rst/u_rst_gen/rst_ac_i2c_po             |                4 |              7 |
 |  u_clk_rst/u_clk_gen/clk_sys_po | u_ap_codec_if/u_ac_i2c_if/u_ac_i2c_wrapper/u_ac_i2c_master/addr_rw0                         |                                               |                4 |              8 |
