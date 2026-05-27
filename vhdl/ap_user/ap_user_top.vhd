@@ -56,7 +56,8 @@ architecture rtl of ap_user_top is
   signal tone_out_l     : signed(15 downto 0);
   signal tone_out_r     : signed(15 downto 0);
   signal ram_out        : signed(15 downto 0);
-  
+  signal ram_playing    : std_logic;
+
   -- UI and control signals
   signal rot_count_s    : std_logic_vector(1 downto 0);
 
@@ -98,7 +99,7 @@ begin
     elsif rising_edge(clk_pi) then
       if dac_enb_pi = '1' then
         
-        if btn_pi(2) = '1' then
+        if ram_playing = '1' then
           -- Priority 1: Audio RAM playback
           dac_data_po.l <= resize(ram_out, DAC_DW);
           dac_data_po.r <= resize(ram_out, DAC_DW);
@@ -168,12 +169,13 @@ begin
 
   u_audio_ram : entity work.audio_ram
     port map (
-      clk_pi  => clk_pi, 
-      ce_pi   => adc_enb_pi,
-      rec_pi  => btn_pi(1), 
-      play_pi => btn_pi(2), 
-      din_pi  => adc_data_pi.l(ADC_DW-1 downto ADC_DW-16), 
-      dout_po => ram_out
+      clk_pi     => clk_pi,
+      ce_pi      => adc_enb_pi,
+      rec_pi     => btn_pi(1),
+      play_pi    => btn_pi(2),
+      din_pi     => adc_data_pi.l(ADC_DW-1 downto ADC_DW-16),
+      dout_po    => ram_out,
+      playing_po => ram_playing
     );
 
   u_seg7 : entity work.seg7_driver
